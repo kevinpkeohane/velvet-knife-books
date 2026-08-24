@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Velvet Knife — A Fantasy Heist Saga by Kennedy MacEoghain</title>
+  <meta name="description" content="Six impossible thefts. One thief who was never meant to be enough. The Velvet Knife — a street-level fantasy heist saga by Kennedy MacEoghain." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #090909;
+      --dark:    #111010;
+      --card:    #161414;
+      --border:  #2a2020;
+      --crimson: #B12535;
+      --crimson-light: #d63048;
+      --gold:    #a07840;
+      --cream:   #ede3d5;
+      --muted:   #8a7d6e;
+      --serif:   'Crimson Pro', Georgia, serif;
+      --display: 'Cinzel', 'Trajan Pro', serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--cream);
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(9,9,9,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--display);
+      font-size: 0.95rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--display);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cream); }
+    .nav-cta {
+      background: var(--crimson);
+      color: var(--cream) !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: 2px;
+    }
+    .nav-cta:hover { background: var(--crimson-light) !important; color: var(--cream) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 40%, rgba(177,37,53,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 100% 80% at 50% 100%, rgba(160,120,64,0.05) 0%, transparent 60%);
+    }
+    .hero-label {
+      font-family: var(--display);
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 1.5rem;
+    }
+    .hero-rule {
+      display: inline-block; width: 40px; height: 1px;
+      background: var(--crimson); margin: 0 1rem; vertical-align: middle;
+    }
+    .hero h1 {
+      font-family: var(--display);
+      font-size: clamp(3rem, 9vw, 7.5rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cream);
+      line-height: 1.05;
+      margin-bottom: 0.4rem;
+    }
+    .hero-subtitle {
+      font-family: var(--display);
+      font-size: clamp(0.65rem, 1.5vw, 0.8rem);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2.5rem;
+    }
+    .hero-tagline {
+      font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+      font-style: italic;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 3.5rem;
+      line-height: 1.6;
+    }
+    .hero-tagline em { color: var(--cream); font-style: normal; }
+    .btn {
+      display: inline-block;
+      font-family: var(--display);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.85rem 2.2rem;
+      border: 1px solid var(--crimson);
+      color: var(--cream);
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn:hover { background: var(--crimson); }
+    .btn-fill { background: var(--crimson); }
+    .btn-fill:hover { background: var(--crimson-light); border-color: var(--crimson-light); }
+    .hero-blade {
+      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      color: var(--muted); font-size: 0.7rem; letter-spacing: 0.2em;
+      text-transform: uppercase; font-family: var(--display);
+      opacity: 0.5;
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 6rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-family: var(--display);
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: var(--display);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 1.5rem;
+    }
+    .divider {
+      width: 48px; height: 1px;
+      background: linear-gradient(90deg, var(--crimson), transparent);
+      margin-bottom: 3rem;
+    }
+
+    /* ── SERIES INTRO ── */
+    .series-intro { background: var(--dark); }
+    .series-intro-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .series-intro-text p {
+      color: var(--muted); margin-bottom: 1.2rem; font-size: 1.05rem;
+    }
+    .series-intro-text p:last-child { margin-bottom: 0; }
+    .series-intro-text strong { color: var(--cream); font-weight: 600; }
+    .series-intro-quote {
+      border-left: 2px solid var(--crimson);
+      padding: 1.5rem 0 1.5rem 2rem;
+    }
+    .series-intro-quote blockquote {
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1.5;
+    }
+    .series-intro-quote cite {
+      display: block; margin-top: 1rem;
+      font-size: 0.75rem; letter-spacing: 0.15em;
+      text-transform: uppercase; font-style: normal;
+      color: var(--muted); font-family: var(--display);
+    }
+
+    /* ── BOOKS ── */
+    .books { background: var(--black); }
+    .books-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem; margin-top: 1rem;
+    }
+    .book-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      transition: border-color 0.2s;
+    }
+    .book-card:hover { border-color: var(--crimson); }
+    .book-cover {
+      width: 100%; aspect-ratio: 2/3; overflow: hidden;
+      background: #1a1515;
+    }
+    .book-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .book-body { padding: 2rem; display: flex; flex-direction: column; flex: 1; }
+    .book-number {
+      font-family: var(--display); font-size: 0.6rem;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--crimson); margin-bottom: 0.5rem;
+    }
+    .book-title {
+      font-family: var(--display); font-weight: 600;
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--cream); line-height: 1.2; margin-bottom: 0.3rem;
+    }
+    .book-series-line {
+      font-size: 0.78rem; color: var(--gold); font-style: italic;
+      margin-bottom: 1.2rem;
+    }
+    .book-blurb {
+      font-size: 0.98rem; color: var(--muted); line-height: 1.65;
+      flex: 1; margin-bottom: 1.8rem;
+    }
+    .book-blurb em { color: var(--cream); font-style: italic; }
+    .buy-buttons { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .buy-btn {
+      display: inline-block; text-decoration: none;
+      font-family: var(--display); font-size: 0.6rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .buy-btn:hover { border-color: var(--crimson); color: var(--cream); }
+    .buy-btn-primary {
+      background: var(--crimson); border-color: var(--crimson); color: var(--cream);
+    }
+    .buy-btn-primary:hover { background: var(--crimson-light); border-color: var(--crimson-light); color: var(--cream); }
+
+    .series-note {
+      text-align: center; margin-top: 3.5rem;
+      font-family: var(--display); font-size: 0.7rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .series-note::before, .series-note::after {
+      content: '—'; margin: 0 0.8rem; color: var(--border);
+    }
+
+    /* ── AUTHOR ── */
+    .author { background: var(--dark); }
+    .author-inner {
+      display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start;
+    }
+    .author-name-block { }
+    .author-title {
+      font-family: var(--display); font-size: 0.65rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--crimson); margin-bottom: 1rem;
+    }
+    .author-name {
+      font-family: var(--display); font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--cream); line-height: 1.2; margin-bottom: 0.5rem;
+    }
+    .author-rule { width: 40px; height: 1px; background: var(--crimson); margin-top: 1.5rem; }
+    .author-bio p { color: var(--muted); margin-bottom: 1.1rem; font-size: 1.05rem; }
+    .author-bio strong { color: var(--cream); }
+    .author-links { margin-top: 1.8rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── NEWSLETTER ── */
+    .newsletter {
+      background: #0e0b0b;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .newsletter-inner { text-align: center; max-width: 560px; margin: 0 auto; }
+    .newsletter p {
+      color: var(--muted); margin-bottom: 2rem; font-size: 1.05rem; font-style: italic;
+    }
+    .newsletter-form { display: flex; gap: 0; max-width: 420px; margin: 0 auto; }
+    .newsletter-form input {
+      flex: 1; padding: 0.8rem 1.2rem;
+      background: var(--dark); border: 1px solid var(--border);
+      border-right: none;
+      color: var(--cream); font-family: var(--serif); font-size: 0.95rem;
+      outline: none;
+    }
+    .newsletter-form input::placeholder { color: var(--muted); }
+    .newsletter-form input:focus { border-color: var(--crimson); }
+    .newsletter-form button {
+      padding: 0.8rem 1.5rem;
+      background: var(--crimson); border: 1px solid var(--crimson);
+      color: var(--cream); cursor: pointer;
+      font-family: var(--display); font-size: 0.65rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    .newsletter-form button:hover { background: var(--crimson-light); border-color: var(--crimson-light); }
+    .newsletter-note {
+      margin-top: 1rem; font-size: 0.8rem;
+      color: var(--muted); font-style: normal;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      padding: 2.5rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-logo {
+      font-family: var(--display); font-size: 0.7rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+    }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+    .footer-links a {
+      font-family: var(--display); font-size: 0.62rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--cream); }
+    .footer-copy {
+      width: 100%; text-align: center; margin-top: 1.5rem;
+      font-size: 0.8rem; color: var(--border);
+      font-family: var(--display); letter-spacing: 0.1em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.2rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links li:not(:last-child) { display: none; }
+      .series-intro-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .author-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .author-rule { margin-bottom: 2rem; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form input { border-right: 1px solid var(--border); border-bottom: none; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">The Velvet Knife</a>
+  <ul class="nav-links">
+    <li><a href="#books">Books</a></li>
+    <li><a href="#author">Author</a></li>
+    <li><a href="#newsletter" class="nav-cta">Get Updates</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div style="position:relative; z-index:1;">
+    <p class="hero-label"><span class="hero-rule"></span>A Fantasy Heist Saga<span class="hero-rule"></span></p>
+    <h1>The Velvet<br>Knife</h1>
+    <p class="hero-subtitle">Kennedy MacEoghain</p>
+    <p class="hero-tagline">
+      <em>Six impossible thefts.</em> One thief who was never meant to be enough.<br>
+      And every city she walks into has a door that's meant to stay shut.
+    </p>
+    <a href="#books" class="btn btn-fill">Start the Series</a>
+  </div>
+  <p class="hero-blade">&#8595; The Books</p>
+</section>
+
+<!-- SERIES INTRO -->
+<section class="series-intro" id="about">
+  <div class="container">
+    <div class="series-intro-inner">
+      <div class="series-intro-text">
+        <p class="section-label">The World</p>
+        <h2 class="section-title">Nothing's Impossible.<br>It Just Means Someone<br>Rich Has Made the Door Ugly.</h2>
+        <div class="divider"></div>
+        <p>Nasyk is a thief. Small, blue, very good at climbing things and taking things that don't belong to her. She works with crews she cannot quite afford to trust, in cities that would cheerfully see her dead, for money that is — for once — clean.</p>
+        <p>Every book in the Velvet Knife series is a <strong>heist inside a different city</strong> — each one a world with its own machinery of power, its own ugly door, its own reason you'd be a fool to try. The price is always worse than the plan. The plan always falls apart. Nasyk always comes out the other side.</p>
+        <p><strong>Street-level fantasy.</strong> No prophecy. No chosen one. Just a very small woman, a very ugly door, and the one crew that might — might — be good enough.</p>
+      </div>
+      <div class="series-intro-quote">
+        <blockquote>
+          "Nothing's impossible. It just means someone rich has made the door ugly."
+        </blockquote>
+        <cite>— Nasyk, The Silver Vow</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKS -->
+<section class="books" id="books">
+  <div class="container">
+    <p class="section-label">The Series</p>
+    <h2 class="section-title">The Books</h2>
+    <div class="divider"></div>
+    <div class="books-grid">
+
+      <!-- Book 2: The Silver Vow -->
+      <div class="book-card">
+        <div class="book-cover">
+          <img src="covers/silver-vow.jpg" alt="The Silver Vow — cover" loading="lazy" />
+        </div>
+        <div class="book-body">
+          <p class="book-number">The Velvet Knife · Book Two</p>
+          <h3 class="book-title">The Silver Vow</h3>
+          <p class="book-series-line">Where debt is inherited like a disease.</p>
+          <p class="book-blurb">
+            In a city where debt is passed down like a disease, one thief means to steal the thing that makes a promise binding. Vael Corran runs on owing — its merchant houses can bind a child to a bond their grandfather signed, and the Witnesses make certain no debt is ever forgotten.<br><br>
+            Nasyk wants the Silver Vow. For the money, yes. But also because she has spent her whole life running from the thing this city does to a hundred thousand people at once. <em>The plan is impossible. The cost is worse.</em>
+          </p>
+          <div class="buy-buttons">
+            <!-- TODO: Replace # with actual buy links -->
+            <a href="#" class="buy-btn buy-btn-primary">Amazon</a>
+            <a href="#" class="buy-btn">Barnes &amp; Noble</a>
+            <a href="#" class="buy-btn">Kobo</a>
+            <a href="https://kennedymaceoghain.com" class="buy-btn">Direct</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 3: The House That Keeps the Names -->
+      <div class="book-card">
+        <div class="book-cover">
+          <img src="covers/house-names.jpg" alt="The House That Keeps the Names — cover" loading="lazy" />
+        </div>
+        <div class="book-body">
+          <p class="book-number">The Velvet Knife · Book Three</p>
+          <h3 class="book-title">The House That Keeps the Names</h3>
+          <p class="book-series-line">The truth can free the dead. It can also burn a city down.</p>
+          <p class="book-blurb">
+            In a metropolis ruled by memorial houses and professional mourners, a person only truly existed if the death-records said so — and the powerful had been erasing the murdered for generations and taking their wealth.<br><br>
+            Nasyk and her crew mean to steal a black vessel from the heart of the death-house and give the names back. <em>Some debts aren't paid in gold. Some are paid in names.</em>
+          </p>
+          <div class="buy-buttons">
+            <!-- TODO: Replace # with actual buy links -->
+            <a href="#" class="buy-btn buy-btn-primary">Amazon</a>
+            <a href="#" class="buy-btn">Barnes &amp; Noble</a>
+            <a href="#" class="buy-btn">Kobo</a>
+            <a href="https://kennedymaceoghain.com" class="buy-btn">Direct</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p class="series-note">The saga continues &mdash; more cities, more impossible doors</p>
+  </div>
+</section>
+
+<!-- AUTHOR -->
+<section class="author" id="author">
+  <div class="container">
+    <div class="author-inner">
+      <div class="author-name-block">
+        <p class="author-title">The Author</p>
+        <h2 class="author-name">Kennedy<br>MacEoghain</h2>
+        <div class="author-rule"></div>
+      </div>
+      <div class="author-bio">
+        <!-- TODO: Replace with Kevin's actual bio -->
+        <p>Kennedy MacEoghain writes street-level fantasy fiction about thieves, cities, and the ugly machinery of power. The Velvet Knife series follows one small, blue, very capable thief across six impossible jobs in six impossible cities.</p>
+        <p>Also the author of the <strong>Beyond Andromeda</strong> science fiction saga — a sweeping epic of deep time, forbidden love, and a people raised across four billion years to ask the one question that matters.</p>
+        <div class="author-links">
+          <a href="https://kennedymaceoghain.com" class="btn">Author Site</a>
+          <!-- TODO: Add social links -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter" id="newsletter">
+  <div class="container">
+    <div class="newsletter-inner">
+      <p class="section-label" style="text-align:center;">Stay in the Know</p>
+      <h2 class="section-title" style="text-align:center;">New Release Alerts</h2>
+      <p>No noise. Just a note when the next impossible door opens.</p>
+      <!-- TODO: Wire up to your email provider (Mailchimp, ConvertKit, etc.) -->
+      <form class="newsletter-form" action="#" method="post">
+        <input type="email" name="email" placeholder="your@email.com" required />
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="newsletter-note">No spam. Unsubscribe any time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="#top" class="footer-logo">The Velvet Knife</a>
+    <ul class="footer-links">
+      <li><a href="#books">Books</a></li>
+      <li><a href="#author">Author</a></li>
+      <li><a href="https://kennedymaceoghain.com">Author Site</a></li>
+      <!-- TODO: Add Instagram/TikTok links when handles confirmed -->
+    </ul>
+    <p class="footer-copy">&copy; Kennedy MacEoghain. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
