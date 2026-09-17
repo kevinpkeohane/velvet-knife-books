@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="iIv6jVtAQXF19Evz9_RxjZmGtZ0tvJfLPrWi8tPG9Xk" />
-  <meta name="google-site-verification" content="4Vt_qQpYymI5dFaAWQ8CXptwK5EbDJWtH-oMuvlK3r0" />
-  
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '2140756586791877');
-  fbq('track', 'PageView');
-  fbq('track', 'ViewContent', {content_type:'product', content_name:'The Velvet Knife Series', content_category:'Books', currency:'USD'});
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=2140756586791877&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W893ZYV116"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-W893ZYV116');
-  </script>
-  <meta name="facebook-domain-verification" content="73au5ro55fx061rjz65988w9obhznl" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Velvet Knife — A Fantasy Heist Saga by Kennedy MacEoghain</title>
   <meta name="description" content="Six impossible thefts. One thief who was never meant to be enough. The Velvet Knife — a street-level fantasy heist saga by Kennedy MacEoghain." />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7QPHENGBJJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7QPHENGBJJ');
+  </script>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3098671457009748');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3098671457009748&ev=PageView&noscript=1"
+  /></noscript>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
@@ -42,42 +38,58 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --black:   #090909;
-      --dark:    #111010;
-      --card:    #161414;
-      --border:  #2a2020;
-      --crimson: #B12535;
-      --crimson-light: #d63048;
-      --gold:    #a07840;
-      --cream:   #ede3d5;
-      --muted:   #8a7d6e;
-      --serif:   'Crimson Pro', Georgia, serif;
-      --display: 'Cinzel', 'Trajan Pro', serif;
+      --black:        #201610;
+      --dark:         #2c1e12;
+      --warm-dark:    #251810;
+      --card:         #38240f;
+      --border:       #56402a;
+      --border-light: #5a4530;
+      --crimson:      #B12535;
+      --crimson-light:#d63048;
+      --gold:         #c8963c;
+      --gold-light:   #c8a060;
+      --cream:        #ede3d5;
+      --cream-dim:    #c8b89e;
+      --muted:        #8a7d6e;
+      --serif:        'Crimson Pro', Georgia, serif;
+      --display:      'Cinzel', 'Trajan Pro', serif;
     }
 
     html { scroll-behavior: smooth; }
 
+    /* Parchment grain overlay */
+    body::after {
+      content: '';
+      position: fixed; inset: 0; z-index: 9000;
+      pointer-events: none;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
+
     body {
-      background: var(--black);
+      background: #1a1108;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
       color: var(--cream);
       font-family: var(--serif);
-      font-size: 1.1rem;
-      line-height: 1.7;
+      font-size: 1.34rem;
+      line-height: 1.75;
       -webkit-font-smoothing: antialiased;
     }
 
     /* ── NAV ── */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1rem 2.5rem;
-      background: rgba(9,9,9,0.92);
-      backdrop-filter: blur(8px);
+      background: rgba(10,7,4,0.95);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
     .nav-logo {
       font-family: var(--display);
-      font-size: 0.95rem;
+      font-size: 1.09rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--cream);
@@ -86,10 +98,10 @@
     .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
     .nav-links a {
       font-family: var(--display);
-      font-size: 0.7rem;
+      font-size: 0.92rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: #ffffff;
       text-decoration: none;
       transition: color 0.2s;
     }
@@ -100,7 +112,7 @@
       padding: 0.45rem 1.1rem;
       border-radius: 2px;
     }
-    .nav-cta:hover { background: var(--crimson-light) !important; color: var(--cream) !important; }
+    .nav-cta:hover { background: var(--crimson-light) !important; }
 
     /* ── HERO ── */
     .hero {
@@ -111,17 +123,19 @@
       padding: 8rem 2rem 5rem;
       position: relative;
       overflow: hidden;
+      background: radial-gradient(ellipse 130% 110% at 50% 60%, #2a1c10 0%, #1a1108 70%);
     }
     .hero::before {
       content: '';
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 70% 60% at 50% 40%, rgba(177,37,53,0.08) 0%, transparent 70%),
-        radial-gradient(ellipse 100% 80% at 50% 100%, rgba(160,120,64,0.05) 0%, transparent 60%);
+        radial-gradient(ellipse 70% 55% at 50% 40%, rgba(177,37,53,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 90% 70% at 50% 100%, rgba(160,120,64,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 50% at 50% 0%, rgba(200,150,60,0.04) 0%, transparent 60%);
     }
     .hero-label {
       font-family: var(--display);
-      font-size: 0.68rem;
+      font-size: 0.82rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
       color: var(--crimson);
@@ -150,42 +164,176 @@
       margin-bottom: 2.5rem;
     }
     .hero-tagline {
-      font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+      font-size: clamp(1.5rem, 2.8vw, 1.9rem);
       font-style: italic;
-      color: var(--muted);
+      color: #ffffff;
       max-width: 560px;
-      margin: 0 auto 3.5rem;
+      margin: 0 auto 3rem;
       line-height: 1.6;
     }
     .hero-tagline em { color: var(--cream); font-style: normal; }
+
+    .hero-cta-group {
+      display: flex; flex-direction: column; align-items: center; gap: 0.9rem;
+    }
     .btn {
       display: inline-block;
       font-family: var(--display);
-      font-size: 0.7rem;
+      font-size: 0.84rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       text-decoration: none;
       padding: 0.85rem 2.2rem;
       border: 1px solid var(--crimson);
       color: var(--cream);
-      transition: background 0.2s, color 0.2s;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
     }
     .btn:hover { background: var(--crimson); }
     .btn-fill { background: var(--crimson); }
     .btn-fill:hover { background: var(--crimson-light); border-color: var(--crimson-light); }
-    .hero-blade {
-      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
-      color: var(--muted); font-size: 0.7rem; letter-spacing: 0.2em;
-      text-transform: uppercase; font-family: var(--display);
-      opacity: 0.5;
+    /* ── CHARACTER STRIP ── */
+    .char-strip {
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .char-strip-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr 1fr;
+      gap: 0;
+      align-items: center;
+      max-height: 520px;
+    }
+    .char-img { overflow: hidden; height: 520px; }
+    .char-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s ease; }
+    .char-img:hover img { transform: scale(1.04); }
+    .char-quote {
+      padding: 3rem 2.5rem;
+      text-align: center;
+      background: var(--card);
+      height: 520px;
+      display: flex; flex-direction: column; justify-content: center;
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+    }
+    .char-quote blockquote {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .char-quote cite {
+      font-family: var(--display);
+      font-size: 0.79rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      font-style: normal;
     }
 
-    /* ── SECTION SHARED ── */
+    /* ── EXCERPTS ── */
+    .excerpts { background: var(--dark); }
+    .stagger-grid { display: flex; flex-direction: column; gap: 1.8rem; }
+    .stagger-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-left: 3px solid var(--crimson); padding: 2rem 2.2rem;
+      max-width: 72%; transition: border-color 0.2s;
+    }
+    .stagger-card:nth-child(even) { align-self: flex-end; border-left: none; border-right: 3px solid var(--gold); }
+    .stagger-card:hover { border-color: var(--gold); }
+    .stagger-label { font-family: var(--display); font-size: 0.71rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.8rem; }
+    .stagger-card:nth-child(even) .stagger-label { color: var(--gold); }
+    .stagger-quote { font-style: italic; color: #ffffff; line-height: 1.7; font-size: 1.19rem; margin-bottom: 0.9rem; }
+    .stagger-note { font-size: 1.02rem; color: #ffffff; line-height: 1.6; }
+    @media (max-width: 768px) { .stagger-card { max-width: 100%; } }
+
+    /* 2×3 map grid */
+    .map-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    .map-grid-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      cursor: pointer;
+    }
+    .map-grid-cell .map-burned {
+      border-radius: 3px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .map-grid-cell:hover .map-burned { transform: scale(1.02); }
+    .map-grid-label {
+      font-family: var(--display);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+    }
+    .map-grid-sublabel {
+      font-family: var(--serif);
+      font-size: 0.94rem;
+      font-style: italic;
+      color: #ffffff;
+      text-align: center;
+      margin-top: -0.3rem;
+    }
+    @media (max-width: 768px) {
+      .map-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    }
+    @media (max-width: 480px) {
+      .map-grid { grid-template-columns: 1fr; }
+    }
+
+    /* keep old excerpt styles for parchment pages */
+    .excerpt-label {
+      font-family: var(--display);
+      font-size: 0.74rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 1rem;
+    }
+    .excerpt-text {
+      font-size: 1.19rem; font-style: italic;
+      color: #ffffff; line-height: 1.65;
+      margin-bottom: 1.2rem; border: none; padding: 0;
+    }
+    .excerpt-prose { font-size: 1.32rem; color: #ffffff; line-height: 1.75; }
+
+    .btn-ku {
+      border-color: var(--gold);
+      color: var(--gold);
+      padding: 0.6rem 1.8rem;
+      font-size: 0.79rem;
+    }
+    .btn-ku:hover { background: rgba(160,120,64,0.15); color: var(--gold-light); border-color: var(--gold-light); }
+    .hero-ku-note {
+      font-family: var(--display);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: #ffffff;
+      opacity: 0.65;
+    }
+    .hero-blade {
+      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      color: #ffffff; font-size: 0.84rem; letter-spacing: 0.2em;
+      text-transform: uppercase; font-family: var(--display);
+      opacity: 0.45;
+    }
+
+    /* ── SHARED SECTION ── */
     section { padding: 6rem 2rem; }
     .container { max-width: 1100px; margin: 0 auto; }
     .section-label {
       font-family: var(--display);
-      font-size: 0.65rem;
+      font-size: 0.79rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
       color: var(--crimson);
@@ -205,14 +353,19 @@
       background: linear-gradient(90deg, var(--crimson), transparent);
       margin-bottom: 3rem;
     }
+    .divider-center { margin-left: auto; margin-right: auto; }
 
     /* ── SERIES INTRO ── */
-    .series-intro { background: var(--dark); }
+    .series-intro {
+      background: var(--warm-dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
     .series-intro-inner {
       display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
     }
     .series-intro-text p {
-      color: var(--muted); margin-bottom: 1.2rem; font-size: 1.05rem;
+      color: #ffffff; margin-bottom: 1.2rem; font-size: 1.29rem;
     }
     .series-intro-text p:last-child { margin-bottom: 0; }
     .series-intro-text strong { color: var(--cream); font-weight: 600; }
@@ -221,137 +374,506 @@
       padding: 1.5rem 0 1.5rem 2rem;
     }
     .series-intro-quote blockquote {
-      font-size: 1.25rem;
+      font-size: 1.39rem;
       font-style: italic;
       color: var(--cream);
-      line-height: 1.5;
+      line-height: 1.55;
     }
     .series-intro-quote cite {
       display: block; margin-top: 1rem;
-      font-size: 0.75rem; letter-spacing: 0.15em;
+      font-size: 0.89rem; letter-spacing: 0.15em;
       text-transform: uppercase; font-style: normal;
-      color: var(--muted); font-family: var(--display);
+      color: #ffffff; font-family: var(--display);
     }
 
-    /* ── BOOKS ── */
-    .books { background: var(--black); }
-    .books-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.5rem; margin-top: 1rem;
+    /* ── WORLD MAP ── */
+    .world-map-section {
+      background: #231710;
+      padding: 5rem 0 4rem;
+      border-bottom: 1px solid var(--border);
     }
-    .book-card {
-      background: var(--card);
+    .world-map-header {
+      padding: 0 2rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .world-map-header .divider { margin-left: auto; margin-right: auto; margin-bottom: 0; }
+
+    .world-map-wrap {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .world-map-wrap img {
+      width: 100%;
+      display: block;
       border: 1px solid var(--border);
-      display: flex; flex-direction: column;
-      transition: border-color 0.2s;
+      filter: sepia(8%) brightness(0.93) contrast(1.04);
+      border-radius: 2px;
     }
-    .book-card:hover { border-color: var(--crimson); }
-    .book-cover {
-      width: 100%; aspect-ratio: 2/3; overflow: hidden;
-      background: #1a1515;
+
+    /* City Pins */
+    .city-pin {
+      position: absolute;
+      transform: translate(-50%, -50%);
     }
-    .book-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .book-body { padding: 2rem; display: flex; flex-direction: column; flex: 1; }
-    .book-number {
-      font-family: var(--display); font-size: 0.6rem;
-      letter-spacing: 0.25em; text-transform: uppercase;
-      color: var(--crimson); margin-bottom: 0.5rem;
+    .pin-dot {
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--crimson);
+      border: 2px solid rgba(237,227,213,0.85);
+      position: relative;
+      cursor: pointer;
+      z-index: 2;
+      transition: background 0.2s, transform 0.2s;
     }
-    .book-title {
-      font-family: var(--display); font-weight: 600;
-      font-size: clamp(1.1rem, 2vw, 1.35rem);
-      letter-spacing: 0.04em; text-transform: uppercase;
-      color: var(--cream); line-height: 1.2; margin-bottom: 0.3rem;
+    .pin-dot::before {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 1.5px solid var(--crimson);
+      opacity: 0;
+      animation: pinPulse 2.8s ease-out infinite;
     }
-    .book-series-line {
-      font-size: 0.78rem; color: var(--gold); font-style: italic;
+    .pin-dot::after {
+      content: '';
+      position: absolute;
+      inset: -11px;
+      border-radius: 50%;
+      border: 1px solid var(--crimson);
+      opacity: 0;
+      animation: pinPulse 2.8s ease-out infinite 0.7s;
+    }
+
+    @keyframes pinPulse {
+      0%   { transform: scale(0.6); opacity: 0.7; }
+      100% { transform: scale(1);   opacity: 0; }
+    }
+
+    .city-pin:hover .pin-dot {
+      background: var(--gold);
+      border-color: var(--cream);
+      transform: scale(1.3);
+    }
+    .city-pin:hover .pin-dot::before { border-color: var(--gold); }
+    .city-pin:hover .pin-dot::after  { border-color: var(--gold); }
+
+    /* Tooltip */
+    .pin-tooltip {
+      position: absolute;
+      bottom: calc(100% + 14px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(12,9,6,0.97);
+      border: 1px solid var(--border-light);
+      padding: 0.45rem 0.85rem;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.18s;
+      z-index: 20;
+    }
+    /* Arrow */
+    .pin-tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%; left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: var(--border-light);
+    }
+    .city-pin:hover .pin-tooltip { opacity: 1; }
+    .pin-tooltip-name {
+      display: block;
+      font-family: var(--display);
+      font-size: 0.76rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+    .pin-tooltip-book {
+      display: block;
+      font-family: var(--serif);
+      font-size: 0.94rem;
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    /* Mobile map legend */
+    .map-legend { display: none; margin-top: 2rem; padding: 0 2rem; }
+    .map-legend-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem 1.5rem;
+      max-width: 480px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .map-legend-list li {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-family: var(--display);
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+    .map-legend-list li::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--crimson);
+      flex-shrink: 0;
+    }
+    .map-legend-list .book-tag {
+      color: var(--gold);
+      font-style: italic;
+      font-family: var(--serif);
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: 0.89rem;
+    }
+
+    /* ── ILLUSTRATIONS STRIP ── */
+    .illustrations-strip {
+      background: #1a1108;
+      padding: 3rem 2rem;
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .illustrations-strip-inner {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-end;
+      justify-content: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .illus-frame {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      flex-shrink: 0;
+      transition: border-color 0.3s;
+    }
+    .illus-frame:hover { border-color: var(--gold-light); }
+    .illus-frame:nth-child(1) { width: 240px; height: 310px; }
+    .illus-frame:nth-child(2) { width: 200px; height: 260px; }
+    .illus-frame:nth-child(3) { width: 240px; height: 340px; }
+    .illus-frame img {
+      width: 100%; height: 115%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: transform 0.05s linear;
+      will-change: transform;
+    }
+    .illus-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 2.5rem 1rem 0.75rem;
+      background: linear-gradient(transparent, rgba(10,7,4,0.9));
+      font-family: var(--display);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    /* ── HEIST FILES / JOURNEY ── */
+    .journey {
+      background: #231710;
+      padding: 5rem 0;
+    }
+    .journey-header {
+      text-align: center;
+      padding: 0 2rem 4rem;
+    }
+    .journey-header .section-title { margin-bottom: 1rem; }
+    .journey-header .tagline {
+      color: #ffffff;
+      font-style: italic;
+      font-size: 1.24rem;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+
+    /* Heist card */
+    .heist-card {
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+    }
+    .heist-card:last-child { border-bottom: 1px solid var(--border); }
+
+    .heist-bg {
+      position: absolute; inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.13;
+      filter: sepia(25%) brightness(0.75);
+      transition: opacity 0.5s;
+    }
+    .heist-card:hover .heist-bg { opacity: 0.2; }
+
+    /* Warm gradient overlay on cards */
+    .heist-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(13,10,7,0.96) 0%,
+        rgba(13,10,7,0.82) 60%,
+        rgba(20,15,10,0.9) 100%
+      );
+      z-index: 1;
+    }
+
+    .heist-inner {
+      position: relative; z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4.5rem 2rem;
+    }
+    .heist-card.alt .heist-inner { flex-direction: row-reverse; }
+
+    .heist-cover-wrap {
+      flex: 0 0 210px;
+      align-self: flex-start;
+    }
+    .heist-cover-wrap img {
+      width: 100%;
+      display: block;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.65), 0 0 0 1px var(--border);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .heist-card:hover .heist-cover-wrap img {
+      transform: translateY(-5px) rotate(0.5deg);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.75), 0 0 0 1px var(--border-light);
+    }
+
+    .heist-body { flex: 1; min-width: 0; }
+    .heist-meta {
+      display: flex; align-items: center; gap: 0.8rem;
+      margin-bottom: 1rem; flex-wrap: wrap;
+    }
+    .heist-badge {
+      font-family: var(--display);
+      font-size: 0.71rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      background: var(--crimson);
+      color: var(--cream);
+      padding: 0.22rem 0.65rem;
+    }
+    .heist-location {
+      font-family: var(--display);
+      font-size: 0.74rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .heist-location::before { content: '◈ '; font-size: 0.64rem; }
+
+    .heist-title {
+      font-family: var(--display);
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--cream);
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+    .heist-stakes {
+      font-family: var(--display);
+      font-size: 0.79rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      padding-bottom: 1.2rem;
+      margin-bottom: 1.2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .heist-blurb {
+      font-size: 1.42rem;
+      color: #ffffff;
+      line-height: 1.82;
+      margin-bottom: 2rem;
+    }
+    .heist-blurb em { color: #ffffff; font-style: italic; }
+
+    .heist-btns { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+    .hbtn {
+      display: inline-block;
+      text-decoration: none;
+      font-family: var(--display);
+      font-size: 0.74rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.55rem 1rem;
+      border: 1px solid var(--border-light);
+      color: #ffffff;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .hbtn:hover { border-color: var(--crimson); color: var(--cream); }
+    .hbtn-ku {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #0d0a07;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      padding: 0.6rem 1.25rem;
+    }
+    .hbtn-ku:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+      color: #0d0a07;
+    }
+    .hbtn-amz {
+      background: var(--crimson);
+      border-color: var(--crimson);
+      color: var(--cream);
+    }
+    .hbtn-amz:hover {
+      background: var(--crimson-light);
+      border-color: var(--crimson-light);
+      color: var(--cream);
+    }
+
+    /* Coming soon card */
+    .heist-card.coming-soon .heist-bg { opacity: 0.05; }
+    .heist-card.coming-soon::before {
+      background: linear-gradient(
+        135deg,
+        rgba(13,10,7,0.98) 0%,
+        rgba(13,10,7,0.92) 100%
+      );
+    }
+    .cs-placeholder {
+      flex: 0 0 210px;
+      aspect-ratio: 2/3;
+      background: linear-gradient(155deg, #1c1610 0%, #0e0a07 100%);
+      border: 1px dashed var(--border-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      font-family: var(--display);
+      font-size: 0.76rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--border-light);
+    }
+    .cs-placeholder svg { opacity: 0.2; }
+
+    .cs-label {
+      display: inline-block;
+      font-family: var(--display);
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border-light);
+      padding: 0.28rem 0.8rem;
       margin-bottom: 1.2rem;
     }
-    .book-blurb {
-      font-size: 0.98rem; color: var(--muted); line-height: 1.65;
-      flex: 1; margin-bottom: 1.8rem;
+    .notify-btn {
+      display: inline-block;
+      text-decoration: none;
+      font-family: var(--display);
+      font-size: 0.76rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.6rem 1.4rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      transition: background 0.2s, color 0.2s;
     }
-    .book-blurb em { color: var(--cream); font-style: italic; }
-    .buy-buttons { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-    .buy-btn {
-      display: inline-block; text-decoration: none;
-      font-family: var(--display); font-size: 0.6rem;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      padding: 0.5rem 1rem;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .buy-btn:hover { border-color: var(--crimson); color: var(--cream); }
-    .buy-btn-primary {
-      background: var(--crimson); border-color: var(--crimson); color: var(--cream);
-    }
-    .buy-btn-primary:hover { background: var(--crimson-light); border-color: var(--crimson-light); color: var(--cream); }
-
-    .series-note {
-      text-align: center; margin-top: 3.5rem;
-      font-family: var(--display); font-size: 0.7rem;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--muted);
-    }
-    .series-note::before, .series-note::after {
-      content: '—'; margin: 0 0.8rem; color: var(--border);
-    }
+    .notify-btn:hover { background: rgba(160,120,64,0.15); color: var(--gold-light); }
 
     /* ── AUTHOR ── */
-    .author { background: var(--dark); }
-    .author-inner {
-      display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start;
+    .author {
+      background: var(--warm-dark);
+      border-top: 1px solid var(--border);
     }
-    .author-name-block { }
+    .author-inner {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
+    }
     .author-title {
-      font-family: var(--display); font-size: 0.65rem;
+      font-family: var(--display); font-size: 0.79rem;
       letter-spacing: 0.3em; text-transform: uppercase;
       color: var(--crimson); margin-bottom: 1rem;
     }
     .author-name {
-      font-family: var(--display); font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-      font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
-      color: var(--cream); line-height: 1.2; margin-bottom: 0.5rem;
+      font-family: var(--display);
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--cream);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
     }
     .author-rule { width: 40px; height: 1px; background: var(--crimson); margin-top: 1.5rem; }
-    .author-bio p { color: var(--muted); margin-bottom: 1.1rem; font-size: 1.05rem; }
+    .author-bio p { color: #ffffff; margin-bottom: 1.1rem; font-size: 1.42rem; }
+    .author-bio p:last-child { margin-bottom: 0; }
     .author-bio strong { color: var(--cream); }
     .author-links { margin-top: 1.8rem; display: flex; gap: 1rem; flex-wrap: wrap; }
 
     /* ── NEWSLETTER ── */
     .newsletter {
-      background: #0e0b0b;
+      background: #1a1108;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
     .newsletter-inner { text-align: center; max-width: 560px; margin: 0 auto; }
     .newsletter p {
-      color: var(--muted); margin-bottom: 2rem; font-size: 1.05rem; font-style: italic;
+      color: #ffffff; margin-bottom: 2rem;
+      font-size: 1.19rem; font-style: italic;
     }
-    .newsletter-form { display: flex; gap: 0; max-width: 420px; margin: 0 auto; }
+    .newsletter-form { display: flex; max-width: 420px; margin: 0 auto; }
     .newsletter-form input {
       flex: 1; padding: 0.8rem 1.2rem;
-      background: var(--dark); border: 1px solid var(--border);
-      border-right: none;
-      color: var(--cream); font-family: var(--serif); font-size: 0.95rem;
+      background: var(--card);
+      border: 1px solid var(--border); border-right: none;
+      color: var(--cream); font-family: var(--serif); font-size: 1.09rem;
       outline: none;
     }
-    .newsletter-form input::placeholder { color: var(--muted); }
+    .newsletter-form input::placeholder { color: #ffffff; }
     .newsletter-form input:focus { border-color: var(--crimson); }
     .newsletter-form button {
       padding: 0.8rem 1.5rem;
       background: var(--crimson); border: 1px solid var(--crimson);
       color: var(--cream); cursor: pointer;
-      font-family: var(--display); font-size: 0.65rem;
+      font-family: var(--display); font-size: 0.79rem;
       letter-spacing: 0.2em; text-transform: uppercase;
-      transition: background 0.2s;
+      transition: background 0.2s, border-color 0.2s;
     }
     .newsletter-form button:hover { background: var(--crimson-light); border-color: var(--crimson-light); }
-    .newsletter-note {
-      margin-top: 1rem; font-size: 0.8rem;
-      color: var(--muted); font-style: normal;
-    }
+    .newsletter-note { margin-top: 1rem; font-size: 0.94rem; color: #ffffff; font-style: normal; }
 
     /* ── FOOTER ── */
     footer {
@@ -365,67 +887,367 @@
       flex-wrap: wrap; gap: 1rem;
     }
     .footer-logo {
-      font-family: var(--display); font-size: 0.7rem;
+      font-family: var(--display); font-size: 0.84rem;
       letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--muted); text-decoration: none;
+      color: #ffffff; text-decoration: none;
     }
     .footer-links { display: flex; gap: 1.5rem; list-style: none; }
     .footer-links a {
-      font-family: var(--display); font-size: 0.62rem;
+      font-family: var(--display); font-size: 0.76rem;
       letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--muted); text-decoration: none;
+      color: #ffffff; text-decoration: none;
       transition: color 0.2s;
     }
     .footer-links a:hover { color: var(--cream); }
     .footer-copy {
       width: 100%; text-align: center; margin-top: 1.5rem;
-      font-size: 0.8rem; color: var(--border);
+      font-size: 0.94rem; color: var(--border-light);
       font-family: var(--display); letter-spacing: 0.1em;
     }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
+      .char-strip-inner { grid-template-columns: 1fr; max-height: none; }
+      .char-img { height: 280px; }
+      .char-quote { height: auto; }
+
       nav { padding: 1rem 1.2rem; }
       .nav-links { gap: 1rem; }
       .nav-links li:not(:last-child) { display: none; }
+
       .series-intro-inner { grid-template-columns: 1fr; gap: 2rem; }
       .author-inner { grid-template-columns: 1fr; gap: 2rem; }
       .author-rule { margin-bottom: 2rem; }
+
+      /* Map: hide pins, show legend */
+      .city-pin { display: none; }
+      .map-legend { display: block; }
+
+      /* Illustrations: single column */
+      .illustrations-strip-inner {
+        flex-direction: column;
+        align-items: center;
+      }
+      .illus-frame:nth-child(1),
+      .illus-frame:nth-child(2),
+      .illus-frame:nth-child(3) {
+        width: 100%; max-width: 360px;
+        height: 220px;
+      }
+
+      /* Heist cards: stack */
+      .heist-inner,
+      .heist-card.alt .heist-inner {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 3rem 1.5rem;
+      }
+      .heist-cover-wrap { flex: none; width: 150px; align-self: center; }
+      .cs-placeholder { flex: none; width: 150px; }
+
       .newsletter-form { flex-direction: column; }
       .newsletter-form input { border-right: 1px solid var(--border); border-bottom: none; }
+
       .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+/* ── VERTICAL SPINE LINE ── */
+.spine-wrap {
+  position: relative;
+}
+.spine-wrap::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, #c8963c 8%, #c8963c 92%, transparent);
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── SPINE NODE (small circle on the line between sections) ── */
+.spine-node {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  height: 3rem;
+  background: transparent;
+}
+.spine-node::before {
+  content: '';
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #c8963c;
+  opacity: 0.5;
+  box-shadow: 0 0 8px rgba(200,150,60,0.4);
+}
+
+/* ── PARCHMENT PAGE ── */
+.parchment-section {
+  position: relative;
+  z-index: 1;
+  padding: 0 2rem;
+}
+.parchment-page {
+  max-width: 760px;
+  margin: 0 auto;
+  background: #f0e4c4;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 20% 20%, rgba(180,130,60,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(140,100,40,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 0%, rgba(100,70,20,0.1) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 100%, rgba(100,70,20,0.1) 0%, transparent 40%);
+  color: #2a1f0e;
+  padding: 4rem 4.5rem;
+  position: relative;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.4),
+    0 8px 24px rgba(0,0,0,0.5),
+    0 20px 60px rgba(0,0,0,0.3),
+    inset 0 0 80px rgba(160,110,40,0.12);
+}
+
+/* Burned torn edges — top and bottom */
+.parchment-page::before,
+.parchment-page::after {
+  content: '';
+  position: absolute;
+  left: -2px; right: -2px;
+  height: 24px;
+  background:
+    radial-gradient(ellipse 12px 14px at 6% 50%, transparent 70%, #1a1108 71%),
+    radial-gradient(ellipse 14px 12px at 14% 50%, transparent 70%, #1a1108 71%),
+    radial-gradient(ellipse 10px 16px at 22% 50%, transparent 70%, #1a1108 71%),
+    radial-gradient(ellipse 13px 11px at 30% 50%, transparent 70%, #1a1108 71%),
+    radial-gradient(ellipse 11px 15px at 38% 50%, transparent 70%, #1a1108 71%),
+    radial-gradient(ellipse 14px 13px at 46% 50%, transparent 70%, #1a1108 71%),
+    radial-gradient(ellipse 12px 16px at 54% 50%, transparent 70%, #1a1108 71%),
+    radial-gradient(ellipse 10px 12px at 62% 50%, transparent 70%, #1a1108 71%),
+    radial-gradient(ellipse 15px 14px at 70% 50%, transparent 70%, #1a1108 71%),
+    radial-gradient(ellipse 11px 13px at 78% 50%, transparent 70%, #1a1108 71%),
+    radial-gradient(ellipse 13px 15px at 86% 50%, transparent 70%, #1a1108 71%),
+    radial-gradient(ellipse 12px 11px at 94% 50%, transparent 70%, #1a1108 71%);
+  background-size: 100% 100%;
+  z-index: 2;
+}
+.parchment-page::before { top: -12px; transform: scaleY(-1); }
+.parchment-page::after  { bottom: -12px; }
+
+/* Burned left/right edges */
+.parchment-page .burn-left,
+.parchment-page .burn-right {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 20px;
+  background:
+    radial-gradient(ellipse 60% 80% at 0% 50%, rgba(80,40,10,0.35) 0%, transparent 100%);
+  pointer-events: none;
+}
+.parchment-page .burn-left { left: 0; }
+.parchment-page .burn-right { right: 0; transform: scaleX(-1); }
+
+.parchment-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #8a5c2a;
+  margin-bottom: 0.8rem;
+  opacity: 0.8;
+}
+.parchment-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.19rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #3a2010;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(140,90,30,0.3);
+}
+.parchment-prose {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1.22rem;
+  line-height: 1.85;
+  color: #2a1f0e;
+  font-weight: 300;
+}
+.parchment-prose p { margin-bottom: 1.2em; }
+.parchment-prose p:last-child { margin-bottom: 0; }
+.parchment-prose em { font-style: italic; color: #5a3010; }
+.parchment-prose strong { font-weight: 600; color: #3a2010; }
+
+/* Drop cap on first paragraph */
+.parchment-prose p:first-child::first-letter {
+  float: left;
+  font-family: 'Cinzel', serif;
+  font-size: 3.94rem;
+  line-height: 0.75;
+  margin: 0.1em 0.12em 0 0;
+  color: #8a4020;
+  font-weight: 700;
+}
+
+/* Burned map treatment */
+.map-burned {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.map-burned img {
+  width: 100%;
+  display: block;
+  filter: sepia(0.4) contrast(1.05) brightness(0.95);
+  border-radius: 2px;
+}
+.map-burned::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 20% at 50% 0%, rgba(20,10,0,0.7) 0%, transparent 100%),
+    radial-gradient(ellipse 80% 20% at 50% 100%, rgba(20,10,0,0.7) 0%, transparent 100%),
+    radial-gradient(ellipse 15% 80% at 0% 50%, rgba(20,10,0,0.65) 0%, transparent 100%),
+    radial-gradient(ellipse 15% 80% at 100% 50%, rgba(20,10,0,0.65) 0%, transparent 100%),
+    radial-gradient(ellipse 20% 20% at 0% 0%, rgba(10,5,0,0.85) 0%, transparent 80%),
+    radial-gradient(ellipse 20% 20% at 100% 0%, rgba(10,5,0,0.85) 0%, transparent 80%),
+    radial-gradient(ellipse 20% 20% at 0% 100%, rgba(10,5,0,0.85) 0%, transparent 80%),
+    radial-gradient(ellipse 20% 20% at 100% 100%, rgba(10,5,0,0.85) 0%, transparent 80%);
+  pointer-events: none;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .parchment-page { padding: 2.5rem 1.8rem; }
+  .spine-wrap::before { display: none; }
+}
+
+    /* ── STANDALONE MAP INSERTS ── */
+    .map-insert { padding: 3rem 2rem; position: relative; z-index: 1; }
+    .map-insert-inner { max-width: 920px; margin: 0 auto; }
+    .map-insert-label {
+      text-align: center; font-family: var(--display);
+      font-size: 0.76rem; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold); margin-top: 1.2rem; opacity: 0.85;
+    }
+    .map-insert-sub {
+      text-align: center; font-family: var(--serif);
+      font-size: 1.06rem; font-style: italic; color: #ffffff;
+      margin-top: 0.3rem;
+    }
+
+    /* Lighter burn for standalone map inserts — corners readable */
+    .map-insert .map-burned::after {
+      background:
+        radial-gradient(ellipse 80% 15% at 50% 0%, rgba(20,10,0,0.45) 0%, transparent 100%),
+        radial-gradient(ellipse 80% 15% at 50% 100%, rgba(20,10,0,0.45) 0%, transparent 100%),
+        radial-gradient(ellipse 12% 80% at 0% 50%, rgba(20,10,0,0.35) 0%, transparent 100%),
+        radial-gradient(ellipse 12% 80% at 100% 50%, rgba(20,10,0,0.35) 0%, transparent 100%),
+        radial-gradient(ellipse 16% 16% at 0% 0%, rgba(10,5,0,0.5) 0%, transparent 80%),
+        radial-gradient(ellipse 16% 16% at 100% 0%, rgba(10,5,0,0.5) 0%, transparent 80%),
+        radial-gradient(ellipse 16% 16% at 0% 100%, rgba(10,5,0,0.5) 0%, transparent 80%),
+        radial-gradient(ellipse 16% 16% at 100% 100%, rgba(10,5,0,0.5) 0%, transparent 80%);
+    }
+    .world-map-section .map-burned::after {
+      background:
+        radial-gradient(ellipse 80% 15% at 50% 0%, rgba(20,10,0,0.4) 0%, transparent 100%),
+        radial-gradient(ellipse 80% 15% at 50% 100%, rgba(20,10,0,0.4) 0%, transparent 100%),
+        radial-gradient(ellipse 12% 80% at 0% 50%, rgba(20,10,0,0.3) 0%, transparent 100%),
+        radial-gradient(ellipse 12% 80% at 100% 50%, rgba(20,10,0,0.3) 0%, transparent 100%),
+        radial-gradient(ellipse 14% 14% at 0% 0%, rgba(10,5,0,0.45) 0%, transparent 80%),
+        radial-gradient(ellipse 14% 14% at 100% 0%, rgba(10,5,0,0.45) 0%, transparent 80%),
+        radial-gradient(ellipse 14% 14% at 0% 100%, rgba(10,5,0,0.45) 0%, transparent 80%),
+        radial-gradient(ellipse 14% 14% at 100% 100%, rgba(10,5,0,0.45) 0%, transparent 80%);
     }
   </style>
 </head>
 <body>
+<div class="spine-wrap">
 
-<!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo">The Velvet Knife</a>
+<!-- ══════════════════════ NAV ══════════════════════ -->
+<nav aria-label="Site navigation">
+  <a href="#top" class="nav-logo">The Velvet Knife</a>
   <ul class="nav-links">
+    <li><a href="#world-map">Maps</a></li>
+    <li><a href="#read">Read</a></li>
     <li><a href="#books">Books</a></li>
     <li><a href="#author">Author</a></li>
     <li><a href="#newsletter" class="nav-cta">Get Updates</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
-<section class="hero" id="top">
-  <div style="position:relative; z-index:1;">
-    <p class="hero-label"><span class="hero-rule"></span>A Fantasy Heist Saga<span class="hero-rule"></span></p>
+<!-- ══════════════════════ HERO ══════════════════════ -->
+<section class="hero" id="top" aria-label="Hero">
+  <div style="position:relative; z-index:1; width:100%;">
+    <p class="hero-label">
+      <span class="hero-rule" aria-hidden="true"></span>
+      A Fantasy Heist Saga
+      <span class="hero-rule" aria-hidden="true"></span>
+    </p>
     <h1>The Velvet<br>Knife</h1>
     <p class="hero-subtitle">Kennedy MacEoghain</p>
     <p class="hero-tagline">
-      <em>Six impossible thefts.</em> One thief who was never meant to be enough.<br>
-      And every city she walks into has a door that's meant to stay shut.
+      <strong>Street-level fantasy.</strong> No prophecy. No chosen one.<br>
+      Just a very small woman, a very ugly door, and the one crew that might &mdash; <em>might</em> &mdash; be good enough.
     </p>
-    <a href="#books" class="btn btn-fill">Start the Series</a>
+    <div class="hero-cta-group">
+      <a href="#books" class="btn btn-fill">Start the Series</a>
+      <a href="https://www.amazon.com/dp/B0HGX4FS7W" class="btn btn-ku" rel="noopener">Read Free on Kindle Unlimited</a>
+      <p class="hero-ku-note">Available in Kindle Unlimited</p>
+    </div>
   </div>
-  <p class="hero-blade">&#8595; The Books</p>
+  <p class="hero-blade" aria-hidden="true">&#8595; The World</p>
 </section>
 
-<!-- SERIES INTRO -->
-<section class="series-intro" id="about">
+<!-- ══════════════════════ CHARACTER STRIP ══════════════════════ -->
+<section class="char-strip" id="nasyk">
+  <div class="char-strip-inner">
+    <div class="char-img reveal">
+      <img src="art/nasyk-alley.jpg" alt="Nasyk moving across rooftops at night" />
+    </div>
+    <div class="char-quote reveal">
+      <blockquote>
+        "You learn three ways out before a single way in — because in is want and out is life, and want will get you killed if you let it lead."
+      </blockquote>
+      <cite>— Nasyk, The Silver Vow</cite>
+    </div>
+    <div class="char-img reveal">
+      <img src="art/drowned-masque-ebook.jpg" alt="Nasyk standing in a canal city surrounded by carnival masks" />
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ WORLD MAP ══════════════════════ -->
+
+
+<section class="parchment-section" aria-label="Prose excerpt: The Lesson">
+  <div class="parchment-page">
+    <div class="burn-left" aria-hidden="true"></div>
+    <div class="burn-right" aria-hidden="true"></div>
+    <p class="parchment-label">The Silver Vow &mdash; Book Two &mdash; Training</p>
+    <h3 class="parchment-title">Old Marvo's Lesson</h3>
+    <div class="parchment-prose">
+      <p>"Guard. And mind the gondola, I've a good window seat."</p>
+      <p>We go at it, and here's the thing that took me a year to understand about Marvo: he doesn't teach me the form. He teaches me how to survive it. The needle — Serel's needle, finally worn out in the open where I can reach it, on my right hip, ready for the crossdraw, no more shame in it than a blacksmith's arm — is a long thin thing for a long thin woman, and I'm four foot eleven and a half — the half matters, I've never once dropped it — and built like a boy who never got fed, and the forms were written for taller people with patience.</p>
+      <p>Marvo looked at me for a solid week when I first came to him and said, "You fight like you fell down the stairs. And it works. So I'm not going to change that."</p>
+      <p>Then he set about making the staircase mine.</p>
+      <p>So we don't do what the manuals do. We do what works. He'll come at me with the old style, perfect, unhurried, and I'll do something ugly and fast and gravel-under-the-foot, and half the time it works and half the time he's already caught me and I'm tasting the flagstone. And he'll stand over me breathing like a bellows and say, "You just countered a man who's been doing this since before your grandmother was a splinter, with a move you learned from a sewer drain. I want you to understand that's <em>not</em> a compliment." And then, because he's a sentimental bastard under the fist-face, he'll help me up and say, "Again."</p>
+      <p>After, he sat me on the bench and stood looking at the canal with his hands behind his back, which is how he stands when he's deciding whether to say something. "You're carrying something," he said, to the canal.</p>
+      <p>"I'm fine."</p>
+      <p>"I didn't ask if you were fine. I said you're carrying something. The body doesn't lie in a drill. Whatever's in your head is in your hands by the second measure, and your hands have been half a beat behind all morning." He turned. "You don't have to tell me what it is. But I need you to know I can see it, so you're not managing both the problem and the impression of no problem. The impression costs as much as the thing."</p>
+      <p>"Personal stakes change the body's arithmetic," he said. "It starts calculating not just the risk to itself but the risk of failing what it cares about. That's two calculations at once." He picked up his flask. "Compensating makes it worse. Knowing it's there and letting it be there — that's different from compensating. You don't fight the lag. You don't pretend it's not there. You simply know where it is and work around it, the way you work around a sore ankle without loading it. That's a thing some people learn in thirty years of fighting. You learned it now because you have the sense to tell someone."</p>
+    </div>
+  </div>
+</section>
+<div class="spine-node" aria-hidden="true"></div>
+
+<!-- ══════════════════════ SERIES INTRO ══════════════════════ -->
+<section class="series-intro" id="about" aria-label="About the series">
   <div class="container">
     <div class="series-intro-inner">
       <div class="series-intro-text">
@@ -433,12 +1255,10 @@
         <h2 class="section-title">Nothing's Impossible.<br>It Just Means Someone<br>Rich Has Made the Door Ugly.</h2>
         <div class="divider"></div>
         <p>Nasyk is a thief. Small, blue, very good at climbing things and taking things that don't belong to her. She works with crews she cannot quite afford to trust, in cities that would cheerfully see her dead, for money that is — for once — clean.</p>
-        <p>Every book in the Velvet Knife series is a <strong>heist inside a different city</strong> — each one a world with its own machinery of power, its own ugly door, its own reason you'd be a fool to try. The price is always worse than the plan. The plan always falls apart. Nasyk always comes out the other side.</p>
-        <p>But the doors aren't the whole story. Beneath them runs the <strong>Sixfold Claim</strong> — six houses, in six of the oldest cities, each owning a piece of what it means to be a person: who may <strong>bind</strong> you, who may <strong>file</strong> you gone, who may decide you ever <strong>happened</strong>, who names you, what you can <strong>inherit</strong>, and what is still <strong>coming for you</strong>. Nasyk isn't selling her luck for gold. She's tearing down the machinery that owns people, one city at a time.</p>
-        <p>And she didn't choose any of it. Three witches have been arranging the doors in front of her since before she knew the game had a name — a mirror merchant who sells what you mistake yourself for, a scroll keeper who writes in still-wet ink long past its date, and a sea witch with salt on her breath. At first they seemed like patrons. Increasingly, they seem like the only thing that might keep her alive.</p>
-        <p><strong>Street-level fantasy.</strong> No prophecy. No chosen one. Just a very small woman, a very ugly door, and the one crew that might — might — be good enough.</p>
+        <p>Every book is a <strong>heist inside a different city</strong> — each one with its own machinery of power, its own ugly door, its own reason you'd be a fool to try. Beneath them runs the <strong>Sixfold Claim</strong>: six houses, in six of the oldest cities, each owning a piece of what it means to be a person. Nasyk isn't selling her luck for gold. She's tearing down the machinery that owns people, one city at a time.</p>
+        <p><strong>Street-level fantasy.</strong> No prophecy. No chosen one. Just a very small woman, a very ugly door, and the one crew that might — <em>might</em> — be good enough.</p>
       </div>
-      <div class="series-intro-quote">
+      <div class="series-intro-quote" aria-label="Series quote">
         <blockquote>
           "I'm not noble. I'm not kind. I'm just the one who comes through the door that was meant to stay shut."
         </blockquote>
@@ -448,148 +1268,441 @@
   </div>
 </section>
 
-<!-- BOOKS -->
-<section class="books" id="books">
+<!-- ══════════════════════ WORLD MAP ══════════════════════ -->
+<section class="world-map-section" id="world-map" aria-label="World map of the series">
+  <div class="world-map-header container">
+    <p class="section-label">The Six Impossible Thefts</p>
+    <h2 class="section-title">Six Cities. Six Impossible Thefts.</h2>
+    <div class="divider divider-center"></div>
+  </div>
+
+  <div class="world-map-wrap map-burned">
+    <img
+      src="maps/six-thefts-new.jpg"
+      alt="Parchment world map of The Six Impossible Thefts series, showing all cities: Iron Gaol, High Counting-House, Aurenmask, The Nethermarch, Vael Corran, The Namehouse, and Zimira"
+    />
+
+    <!-- Iron Gaol -->
+<div class="pin-tooltip" role="tooltip">
+        <span class="pin-tooltip-name">Iron Gaol</span>
+        <span class="pin-tooltip-book">Book 1 — The Origin</span>
+      </div>
+    </div>
+
+    <!-- High Counting-House -->
+<div class="pin-tooltip" role="tooltip">
+        <span class="pin-tooltip-name">High Counting-House</span>
+        <span class="pin-tooltip-book">Book 5 — The Gaol of Tomorrow</span>
+      </div>
+    </div>
+
+    <!-- Aurenmask -->
+<div class="pin-tooltip" role="tooltip">
+        <span class="pin-tooltip-name">Aurenmask</span>
+        <span class="pin-tooltip-book">The Velvet Knife World</span>
+      </div>
+    </div>
+
+    <!-- The Nethermarch -->
+<div class="pin-tooltip" role="tooltip">
+        <span class="pin-tooltip-name">The Nethermarch</span>
+        <span class="pin-tooltip-book">The Velvet Knife World</span>
+      </div>
+    </div>
+
+    <!-- Vael Corran — Book 2 -->
+<div class="pin-tooltip" role="tooltip">
+        <span class="pin-tooltip-name">Vael Corran</span>
+        <span class="pin-tooltip-book">Book 2 — The Silver Vow</span>
+      </div>
+    </div>
+
+    <!-- The Namehouse — Book 3 -->
+<div class="pin-tooltip" role="tooltip">
+        <span class="pin-tooltip-name">The Namehouse</span>
+        <span class="pin-tooltip-book">Book 3 — The House That Keeps the Names</span>
+      </div>
+    </div>
+
+    <!-- Zimira — Book 4 -->
+<div class="pin-tooltip" role="tooltip">
+        <span class="pin-tooltip-name">Zimira</span>
+        <span class="pin-tooltip-book">Book 4 — The Drowned Masque</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile legend (shown instead of pins) -->
+  <div class="map-legend" aria-label="City legend">
+    <ul class="map-legend-list">
+      <li>Iron Gaol <span class="book-tag">— Book 1</span></li>
+      <li>High Counting-House <span class="book-tag">— Book 5</span></li>
+      <li>Aurenmask</li>
+      <li>The Nethermarch</li>
+      <li>Vael Corran <span class="book-tag">— Book 2</span></li>
+      <li>The Namehouse <span class="book-tag">— Book 3</span></li>
+      <li>Zimira <span class="book-tag">— Book 4</span></li>
+    </ul>
+  </div>
+</section>
+
+<div class="spine-node" aria-hidden="true"></div>
+<section class="parchment-section" aria-label="Prose excerpt: The Coffin">
+  <div class="parchment-page">
+    <div class="burn-left" aria-hidden="true"></div>
+    <div class="burn-right" aria-hidden="true"></div>
+    <p class="parchment-label">The House That Keeps the Names &mdash; Book Three &mdash; The Burial</p>
+    <h3 class="parchment-title">The Ground</h3>
+    <div class="parchment-prose">
+      <p>I made my lungs go slow when every cell of me screamed to gulp. Slow. In through the nose, the cloth pulling to my lips, a count, out. A thief's whole life is stealing time; I lay in my own grave and stole breaths off my own panic, one at a time, and it is the only theft I've ever been ashamed to be good at.</p>
+      <p>I could move — a hand's width, no more, in any direction. I could turn my head until my nose fouled the wood. I could lift a knee until it met the lid. I could spread my fingers and touch, left and right, the walls of the whole world, and the world was the width of my own shoulders and no wider. You do not know what your body is for until it is given nothing to do and nowhere to go. Mine had spent its life as a spare quick length made for walls and gaps and the tops of things, and now it was folded into a box the shape of a person, and every muscle in it woke up wanting to run and found the running had been taken away, all at once, forever.</p>
+      <p>There's no clock in the ground. Three days my candle would burn, my little flame, whether I lay to watch it or not, and when it guttered the wax would seal and the death would set and everything I had would fall to the house, and I would be, at last and in law, exactly what they'd written.</p>
+      <p>But: the dead keep their steel.</p>
+      <p>It is the one dignity that grim city gave its corpses. They hadn't known to look for it, or hadn't cared to, or the quiet man who dressed me for the hole had felt the hard length at the small of my back and left it because the dead keep their steel and it was more than his soul was worth to send a corpse down disarmed. And there, bound in old leather where it had ridden since I was young enough to steal it, was the Needle.</p>
+      <p>I set the point to the lid above my face and I began to work it into the seam. I'll not pretend it was quick, or that I was brave through it. I wept, in the box, the first real weeping I'd done in decades, snot and dark and the ants pouring and the air going bad, and I dug through it, because you can weep and dig at the same time — that's a thing the ground taught me, that despair and work aren't the enemies the churches say they are. You can be broken all the way through and your hands can keep moving, and the hands are what get you out. Not the courage. The hands.</p>
+      <p>My hand broke the surface into nothing, into cold, into wet. I came up out of the earth of that city the way I've come into every city in my life — sideways, uninvited, hunting the nearest air. The rain came down and washed the dirt and blood off my body, and I got a whole breath, the first whole breath, and I laughed. Wet, and cracked, and mad, half in and half out of a hole in a paupers' field in the rain.</p>
+      <p>They thought me in the ground. And here was the joke the house had made without seeing it: my money wasn't theirs. <em>Not yet.</em></p>
+    </div>
+  </div>
+</section>
+<div class="spine-node" aria-hidden="true"></div>
+
+<!-- ══════════════════════ PROSE EXCERPTS ══════════════════════ -->
+<section class="excerpts" id="read" aria-label="Prose excerpts from the series">
   <div class="container">
-    <p class="section-label">The Series</p>
-    <h2 class="section-title">The Books</h2>
+    <p class="section-label">From the pages</p>
+    <h2 class="section-title">A Taste of the World</h2>
     <div class="divider"></div>
-    <div class="books-grid">
+    <!-- Six staggered prose pull-quote cards -->
+    <div class="stagger-grid">
 
-      <!-- Book 2: The Silver Vow -->
-      <div class="book-card">
-        <div class="book-cover">
-          <img src="covers/silver-vow.jpg" alt="The Silver Vow — cover" loading="lazy" />
-        </div>
-        <div class="book-body">
-          <p class="book-number">The Velvet Knife · Book Two</p>
-          <h3 class="book-title">The Silver Vow</h3>
-          <p class="book-series-line">Where debt is inherited like a disease.</p>
-          <p class="book-blurb">
-            In a city where debt is passed down like a disease, one thief means to steal the thing that makes a promise binding. Vael Corran runs on owing — its merchant houses can bind a child to a bond their grandfather signed, and the Witnesses make certain no debt is ever forgotten.<br><br>
-            Nasyk wants the Silver Vow. For the money, yes. But also because she has spent her whole life running from the thing this city does to a hundred thousand people at once. <em>The plan is impossible. The cost is worse.</em>
-          </p>
-          <div class="buy-buttons">
-            <a href="https://a.co/d/0fDI8SE7" class="buy-btn buy-btn-primary" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'The Velvet Knife Series',currency:'USD',num_items:1});return true;">Amazon Print</a>
-            <a href="https://a.co/d/0bE99TKo" class="buy-btn buy-btn-primary" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'The Velvet Knife Series',currency:'USD',num_items:1});return true;">Amazon eBook</a>
-            <a href="https://www.barnesandnoble.com/w/the-silver-vow-kennedy-maceoghain/1151131213?ean=9798193742968" class="buy-btn" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'The Velvet Knife Series',currency:'USD',num_items:1});return true;">B&amp;N Print</a>
-            <a href="https://www.barnesandnoble.com/w/the-silver-vow-kennedy-maceoghain/1151131487?ean=2940185518847" class="buy-btn" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'The Velvet Knife Series',currency:'USD',num_items:1});return true;">B&amp;N eBook</a>
-            <a href="https://www.kobo.com/us/en/ebook/the-silver-vow-1" class="buy-btn" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'The Velvet Knife Series',currency:'USD',num_items:1});return true;">Kobo</a>
-            <a href="https://kennedymaceoghain.com" class="buy-btn" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'The Velvet Knife Series',currency:'USD',num_items:1});return true;">Direct</a>
-          </div>
-        </div>
+      <div class="stagger-card">
+        <p class="stagger-label">Book Two &mdash; The Discipline</p>
+        <blockquote class="stagger-quote">&ldquo;You learn three ways out before a single way in &mdash; because in is want and out is life, and want will get you killed if you let it lead.&rdquo;</blockquote>
+        <p class="stagger-note">Nasyk on a warm roof in Vael Corran, fed for the first time in three days and near to happy &mdash; in the low animal way she gets happy. Hidden, warm, and not yet anybody&rsquo;s.</p>
       </div>
 
-      <!-- Book 3: The House That Keeps the Names -->
-      <div class="book-card">
-        <div class="book-cover">
-          <img src="covers/house-names.jpg" alt="The House That Keeps the Names — cover" loading="lazy" />
-        </div>
-        <div class="book-body">
-          <p class="book-number">The Velvet Knife · Book Three</p>
-          <h3 class="book-title">The House That Keeps the Names</h3>
-          <p class="book-series-line">The truth can free the dead. It can also burn a city down.</p>
-          <p class="book-blurb">
-            In a metropolis ruled by memorial houses and professional mourners, a person only truly existed if the death-records said so — and the powerful had been erasing the murdered for generations and taking their wealth.<br><br>
-            Nasyk and her crew mean to steal a black vessel from the heart of the death-house and give the names back. <em>Some debts aren't paid in gold. Some are paid in names.</em>
-          </p>
-          <div class="buy-buttons">
-            <a href="https://a.co/d/0fXVfIC9" class="buy-btn buy-btn-primary" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'The Velvet Knife Series',currency:'USD',num_items:1});return true;">Amazon Print</a>
-            <a href="https://a.co/d/06smiPkX" class="buy-btn buy-btn-primary" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'The Velvet Knife Series',currency:'USD',num_items:1});return true;">Amazon eBook</a>
-            <!-- B&N paperback TBC -->
-            <a href="https://www.barnesandnoble.com/w/the-house-that-keeps-the-names-kennedy-maceoghain/1151158074?ean=2940185463253" class="buy-btn" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'The Velvet Knife Series',currency:'USD',num_items:1});return true;">B&amp;N eBook</a>
-            <a href="https://www.kobo.com/us/en/ebook/the-house-that-keeps-the-names" class="buy-btn" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'The Velvet Knife Series',currency:'USD',num_items:1});return true;">Kobo</a>
-            <a href="https://kennedymaceoghain.com" class="buy-btn" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'The Velvet Knife Series',currency:'USD',num_items:1});return true;">Direct</a>
-          </div>
-        </div>
+      <div class="stagger-card">
+        <p class="stagger-label">Book Two &mdash; The Ledger</p>
+        <blockquote class="stagger-quote">&ldquo;Marot Venn. Third of Coldmonth. He put his mark to the House of Sarran for forty crowns, to be borne by his line until discharged.&rdquo; He looked up. A mild face. A bookkeeper&rsquo;s face. &ldquo;The line is your son. The debt is unpaid. The House calls the bond.&rdquo;</blockquote>
+        <p class="stagger-note">It isn&rsquo;t the fists. It&rsquo;s the ledger &mdash; carried like a holy book, two hands forward, a little reverent &mdash; that is the true face of a city built on inherited debt.</p>
       </div>
 
-      <!-- Book 4: The Drowned Masque -->
-      <div class="book-card">
-        <div class="book-cover">
-          <img src="covers/drowned-masque.jpg" alt="The Drowned Masque — cover" loading="lazy" />
-        </div>
-        <div class="book-body">
-          <p class="book-number">The Velvet Knife · Book Four</p>
-          <h3 class="book-title">The Drowned Masque</h3>
-          <p class="book-series-line">In Zimira, your name is your currency. Lose it, and you lose everything.</p>
-          <p class="book-blurb">
-            Every citizen of this canal city pays to be kept — registered, remembered, maintained in the Archivist's great ledger of names. The more you're seen, the more you matter. Stop paying, and the system quietly erases you. Not your body. Just your record. Your reputation. Your right to exist on paper.<br><br>
-            Nasyk has six weeks until the Grand Masquerade. The Archivist's register has noticed her. Her own name is beginning to disappear. <em>Every mask hides a face. Only one of them is the job.</em>
-          </p>
-          <div class="buy-buttons">
-            <a href="https://a.co/d/04zEwfIj" class="buy-btn buy-btn-primary" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'The Velvet Knife Series',currency:'USD',num_items:1});return true;">Amazon Print</a>
-            <a href="https://a.co/d/0eeQajEk" class="buy-btn buy-btn-primary" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'The Velvet Knife Series',currency:'USD',num_items:1});return true;">Amazon eBook</a>
-            <a href="https://www.barnesandnoble.com/w/the-drowned-masque-kennedy-maceoghain/1151195796?ean=9798170338078" class="buy-btn" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'The Velvet Knife Series',currency:'USD',num_items:1});return true;">B&amp;N Print</a>
-          </div>
-        </div>
+      <div class="stagger-card">
+        <p class="stagger-label">Book Three &mdash; The Commission</p>
+        <blockquote class="stagger-quote">&ldquo;A tall thin man of scrolls &mdash; never quite in the room even when he was, fingers leaving ink on everything, and the ink never drying. I took his money and asked no questions. That&rsquo;s the whole art of taking money.&rdquo;</blockquote>
+        <p class="stagger-note">Three witches have been arranging the doors in front of Nasyk since before she knew the game had a name. She&rsquo;s starting to wonder if patrons and traps are the same thing.</p>
       </div>
 
-    </div>
-    <p class="series-note">The saga continues &mdash; more cities, more impossible doors</p>
-  </div>
-</section>
-
-<!-- AUTHOR -->
-
-<!-- ── Maps ── -->
-<section id="maps" style="background:#0a0a0a;padding:5rem 2rem;">
-  <div style="max-width:960px;margin:0 auto;">
-    <p style="font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:#9b111e;font-weight:700;margin-bottom:.75rem;">The World</p>
-    <h2 style="font-size:clamp(1.6rem,4vw,2.6rem);font-weight:800;color:#f2e8d5;line-height:1.15;margin-bottom:3rem;">Every City Has a Map.<br>Every Map Has a Door.</h2>
-
-    <div style="margin-bottom:3.5rem;">
-      <p style="font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#9b111e;font-weight:700;margin-bottom:1rem;">The Known World</p>
-      <img src="maps/world-map.jpg" alt="The Velvet Knife — world map showing the cities of the series" style="width:100%;border-radius:4px;display:block;" loading="lazy" />
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
-      <div>
-        <p style="font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#9b111e;font-weight:700;margin-bottom:1rem;">Vael Corran — Book 1 &amp; 2</p>
-        <img src="maps/vael-corran.jpg" alt="Vael Corran city map — where debt is passed down like a disease" style="width:100%;border-radius:4px;display:block;" loading="lazy" />
-        <p style="color:#888;font-size:.85rem;margin-top:.75rem;line-height:1.55;">In a city where debt is passed down like a disease, one thief means to steal the thing that makes a promise binding.</p>
+      <div class="stagger-card">
+        <p class="stagger-label">Book Three &mdash; The Ground</p>
+        <blockquote class="stagger-quote">&ldquo;A thief&rsquo;s whole life is stealing time. I lay in my own grave and stole breaths off my own panic, one at a time &mdash; the only theft I&rsquo;ve ever been ashamed to be good at.&rdquo;</blockquote>
+        <p class="stagger-note">There&rsquo;s no clock in the ground. But the dead keep their steel &mdash; and a cheap coffin lid is only as final as the woman inside it decides.</p>
       </div>
-      <div>
-        <p style="font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#9b111e;font-weight:700;margin-bottom:1rem;">Zimira — Book 3</p>
-        <img src="maps/zimira.jpg" alt="Zimira city map — the drowning city where names are currency" style="width:100%;border-radius:4px;display:block;" loading="lazy" />
-        <p style="color:#888;font-size:.85rem;margin-top:.75rem;line-height:1.55;">In Zimira, your name is your currency. Lose it, and you lose everything.</p>
+
+      <div class="stagger-card">
+        <p class="stagger-label">Book Two &mdash; The Weight</p>
+        <blockquote class="stagger-quote">&ldquo;You haven&rsquo;t the weight, little needle.&rdquo; Said kind. That&rsquo;s the part I can&rsquo;t forgive &mdash; that it was kind. A cruel hand you can hate clean and run from. A kind hand that measures you and calls you lovely while it does it gets in under the skin and stays. That one draws interest.&rdquo;</blockquote>
+        <p class="stagger-note">Two hundred and fifty years older, and every one of them spent getting good at things. Everything Nasyk is was built around a door she couldn&rsquo;t go through straight.</p>
       </div>
+
+      <div class="stagger-card">
+        <p class="stagger-label">Book Four &mdash; Still Here</p>
+        <blockquote class="stagger-quote">&ldquo;Still here,&rdquo; I said, to the cup, to the needle, to the pale-going dark outside the window. &ldquo;Still yours.&rdquo; The kept are still rich and the maskless are still poor. I didn&rsquo;t fix that. I broke a machine. But the pool is open. The water is gone.&rdquo;</blockquote>
+        <p class="stagger-note">After four centuries of accumulated forgetting, the dammed weight of names the city had been made to unknow is draining the way the natural tide drains. She didn&rsquo;t fix a city. She broke a machine. That&rsquo;s enough.</p>
+      </div>
+
     </div>
   </div>
 </section>
 
-<section class="author" id="author">
+<div class="spine-node" aria-hidden="true"></div>
+<section class="parchment-section" aria-label="Prose excerpt: On the Roof">
+  <div class="parchment-page">
+    <div class="burn-left" aria-hidden="true"></div>
+    <div class="burn-right" aria-hidden="true"></div>
+    <p class="parchment-label">The Silver Vow &mdash; Book Two &mdash; First Night in Vael Corran</p>
+    <h3 class="parchment-title">On the Roof</h3>
+    <div class="parchment-prose">
+      <p>I marked my roads while I had the height. This is the discipline: you learn three ways out before a single way in, because in is want and out is life, and want will get you killed if you let it lead. The roofs east toward the docks &mdash; good broken ground, plenty of gaps a leaper could take. The aqueduct coming in from the marsh hills on its long arches, and the dark beneath it where a body could live if it had to. Where the drains must be, by the slope of the streets. Water and thieves go the same road.</p>
+      <p>Then, with the copper warm under my cheek and the day gone quiet, I did the thing I always do when there&rsquo;s food in me and no one to see. I loosened the thong on the bundle. I never fully unwrap it. I let a hand&rsquo;s width of blade show &mdash; narrow, pale, the alloy the colour of a winter dawn, a Nethershade needle that seemed to drink light rather than throw it &mdash; and felt the whole ugly knot of it turn over in my chest. I laced it back up before the feeling could set a hook. That much I&rsquo;d not give even the empty roof.</p>
+      <p>The day cooled off my skin as the sun went, and I opened the suede to let it. I&rsquo;m built spare as a lath, flat as a boy across the chest and flatter behind &mdash; nothing to grab there either, which has earned me cruelty in some quarters and got me over walls in all of them, and pleased the right hands besides. When the first of the moon came up over the copper I watched, idle, the way the cold drew my nipples up long and dark against the pale blue of me, two small stubborn points of shadow, and I ran a thumb over one just to feel it stand, unhurried, the only ornament I&rsquo;ll ever own that no House can put a sum to. I&rsquo;m not vain. I&rsquo;ve simply spent enough of my life being looked at with a sign drawn against me that I take a private pleasure, now and then, in looking at myself with none, and liking what I find. Then I pulled the suede closed, because the roof was cold and sentiment is cheaper than wine and twice as quick to make a fool of you.</p>
+      <p>So there I was, on a warm roof in a strange city, the money-bells tolling, the bad-toothed grin of Vael Corran laid out below &mdash; fed for the first time in three days and near to happy, in the low animal way I get happy: hidden, warm, and not yet anybody&rsquo;s.</p>
+      <p>That last part was going to be the trouble.</p>
+    </div>
+  </div>
+</section>
+<div class="spine-node" aria-hidden="true"></div>
+
+<!-- ══════════════════════ ILLUSTRATIONS STRIP ══════════════════════ -->
+<div class="illustrations-strip" aria-label="Series illustrations" role="complementary">
+  <div class="illustrations-strip-inner">
+
+    <div class="illus-frame" data-parallax="0.06">
+      <img
+        src="covers/book1.jpg"
+        alt="Book 1 cover — Nasyk, the blue-skinned thief, leaping across rooftops at night"
+        loading="lazy"
+      />
+      <p class="illus-caption">The Origin</p>
+    </div>
+
+    <div class="illus-frame" data-parallax="-0.05">
+      <img
+        src="maps/silver-vow-artifact.jpg"
+        alt="The Silver Vow artifact — an ancient silver disc engraved with spiraling inscriptions, the binding artifact of Vael Corran"
+        loading="lazy"
+        style="object-position: center;"
+      />
+      <p class="illus-caption">The Silver Vow Artifact</p>
+    </div>
+
+    <div class="illus-frame" data-parallax="0.06">
+      <img
+        src="covers/book4.jpg"
+        alt="The Drowned Masque cover — Nasyk stands in a flooded Zimira canal surrounded by carnival masks and skulls, sword raised"
+        loading="lazy"
+      />
+      <p class="illus-caption">The Drowned Masque</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════ HEIST FILES ══════════════════════ -->
+<section class="journey" id="books" aria-label="The Heist Files — book series">
+  <div class="journey-header">
+    <p class="section-label">The Series</p>
+    <h2 class="section-title">The Heist Files</h2>
+    <div class="divider divider-center"></div>
+    <p class="tagline">Every city. Every door. Every job that couldn't be done.</p>
+  </div>
+
+  <!-- ── Book 2: The Silver Vow ── -->
+  <article class="heist-card reveal" id="book2" aria-label="Book 2: The Silver Vow">
+    <div class="heist-bg"
+         style="background-image: url('maps/vael-corran.jpg');"
+         aria-hidden="true"></div>
+    <div class="heist-inner">
+      <div class="heist-cover-wrap">
+        <img
+          src="covers/book2.jpg"
+          alt="The Silver Vow — Book 2 cover showing Nasyk before a full moon with three hooded figures behind her"
+          loading="lazy"
+        />
+      </div>
+      <div class="heist-body">
+        <div class="heist-meta">
+          <span class="heist-badge">Book Two</span>
+          <span class="heist-location">Vael Corran</span>
+        </div>
+        <h3 class="heist-title">The Silver Vow</h3>
+        <p class="heist-stakes">Steal: the artifact that makes debt binding — break it, free thousands.</p>
+        <p class="heist-blurb">
+          In Vael Corran, debt is inherited like a disease. Merchant houses can bind a child to a bond their grandfather signed, and the Witnesses make certain no obligation is ever forgotten. Nasyk wants the Silver Vow — the artifact at the heart of the entire machinery. For the money, yes. But also because she has spent her whole life running from what this city does to a hundred thousand people at once.
+          <br><br>
+          <em>The plan is impossible. The cost is worse.</em>
+        </p>
+        <div class="heist-btns">
+          <a href="https://a.co/d/0bE99TKo" class="hbtn hbtn-ku" rel="noopener">📖 Free on Kindle Unlimited</a>
+          <a href="https://a.co/d/0fDI8SE7" class="hbtn hbtn-amz" rel="noopener">Amazon Print</a>
+          <a href="https://www.barnesandnoble.com/w/the-silver-vow-kennedy-maceoghain/1151131213?ean=9798193742968" class="hbtn" rel="noopener">B&amp;N Print</a>
+          <a href="https://www.barnesandnoble.com/w/the-silver-vow-kennedy-maceoghain/1151131487?ean=2940185518847" class="hbtn" rel="noopener">B&amp;N eBook</a>
+        </div>
+      </div>
+    </div>
+  </article>
+<div class="spine-node" aria-hidden="true"></div>
+<section class="map-insert" aria-label="Vael Corran">
+  <div class="map-insert-inner">
+    <div class="map-burned">
+      <img src="maps/vael-corran-new.jpg" alt="Vael Corran — walled city map from The Silver Vow" loading="lazy" />
+    </div>
+    <p class="map-insert-label">Vael Corran</p>
+    <p class="map-insert-sub">Where debt is inherited like a disease, and the Witnesses forget nothing.</p>
+  </div>
+</section>
+<div class="spine-node" aria-hidden="true"></div>
+<article class="heist-card alt reveal reveal-d1" id="book3" aria-label="Book 3: The House That Keeps the Names">
+    <div class="heist-bg"
+         style="background-image: url('maps/namehouse.jpg');"
+         aria-hidden="true"></div>
+    <div class="heist-inner">
+      <div class="heist-cover-wrap">
+        <img
+          src="covers/house-names.jpg"
+          alt="The House That Keeps the Names — Book 3 cover"
+          loading="lazy"
+        />
+      </div>
+      <div class="heist-body">
+        <div class="heist-meta">
+          <span class="heist-badge">Book Three</span>
+          <span class="heist-location">The Namehouse</span>
+        </div>
+        <h3 class="heist-title">The House That<br>Keeps the Names</h3>
+        <p class="heist-stakes">Steal: the black vessel from the death-house. Give the erased their names back.</p>
+        <p class="heist-blurb">
+          In the Namehouse, you only truly existed if the death-records said so. The powerful had been erasing the murdered for generations — taking their wealth, scrubbing them from the ledger of the living. A person without a death-record never happened. Nasyk and her crew mean to steal the vessel that holds a city's worth of stolen names — and return them to the people who were owed them.
+          <br><br>
+          <em>Some debts aren't paid in gold. Some are paid in names.</em>
+        </p>
+        <div class="heist-btns">
+          <a href="https://a.co/d/06smiPkX" class="hbtn hbtn-ku" rel="noopener">📖 Free on Kindle Unlimited</a>
+          <a href="https://a.co/d/0fXVfIC9" class="hbtn hbtn-amz" rel="noopener">Amazon Print</a>
+          <a href="https://www.barnesandnoble.com/w/the-house-that-keeps-the-names-kennedy-maceoghain/1151158074?ean=2940185463253" class="hbtn" rel="noopener">B&amp;N eBook</a>
+        </div>
+      </div>
+    </div>
+  </article>
+<div class="spine-node" aria-hidden="true"></div>
+<section class="map-insert" aria-label="The Namehouse">
+  <div class="map-insert-inner">
+    <div class="map-burned">
+      <img src="maps/namehouse-new.jpg" alt="The Namehouse — city map from The House That Keeps the Names" loading="lazy" />
+    </div>
+    <p class="map-insert-label">The Namehouse</p>
+    <p class="map-insert-sub">A city built on erasing the dead. The Paupers' Ground fills faster than anyone admits.</p>
+  </div>
+</section>
+<div class="spine-node" aria-hidden="true"></div>
+<article class="heist-card reveal reveal-d2" id="book4" aria-label="Book 4: The Drowned Masque">
+    <div class="heist-bg"
+         style="background-image: url('maps/zimira.jpg');"
+         aria-hidden="true"></div>
+    <div class="heist-inner">
+      <div class="heist-cover-wrap">
+        <img
+          src="covers/book4.jpg"
+          alt="The Drowned Masque — Book 4 cover showing Nasyk in a flooded carnival city, sword raised among floating masks"
+          loading="lazy"
+        />
+      </div>
+      <div class="heist-body">
+        <div class="heist-meta">
+          <span class="heist-badge">Book Four</span>
+          <span class="heist-location">Zimira</span>
+        </div>
+        <h3 class="heist-title">The Drowned Masque</h3>
+        <p class="heist-stakes">Steal: the mask that unmakes identity. In a city where faces are currency.</p>
+        <p class="heist-blurb">
+          In Zimira the water never fully leaves and the carnival never fully ends. Identity is the most valuable commodity in this drowned city — and it can be stripped away. The Drowned Masque controls what a person is allowed to be. Nasyk has come to take it. But this time, someone is also trying to take her.
+          <br><br>
+          <em>The mask changes everything. Even the thief who wears it.</em>
+        </p>
+        <div class="heist-btns">
+          <a href="https://www.amazon.com/dp/B0HGX4FS7W" class="hbtn hbtn-ku" rel="noopener">📖 Free on Kindle Unlimited</a>
+          <a href="https://www.amazon.com/dp/B0HGX4FS7W" class="hbtn hbtn-amz" rel="noopener">Amazon</a>
+          <a href="https://www.barnesandnoble.com/w/the-drowned-masque-kennedy-maceoghain/1151195796?ean=9798170338078" class="hbtn" rel="noopener">B&amp;N eBook</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+<div class="spine-node" aria-hidden="true"></div>
+<section class="map-insert" aria-label="Zimira — The Drowning City">
+  <div class="map-insert-inner">
+    <div class="map-burned">
+      <img src="maps/zimira-new.jpg" alt="Zimira, the Drowning City — map from The Drowned Masque, with Nasyk's Lodging marked" loading="lazy" />
+    </div>
+    <p class="map-insert-label">Zimira — The Drowning City</p>
+    <p class="map-insert-sub">The water never fully leaves. Nasyk's lodging is marked with a star.</p>
+  </div>
+</section>
+<div class="spine-node" aria-hidden="true"></div>
+<article class="heist-card alt coming-soon reveal reveal-d3" id="book5" aria-label="Book 5: The Gaol of Tomorrow — coming soon">
+    <div class="heist-bg"
+         style="background-image: url('maps/six-thefts-new.jpg'); background-position: 70% 15%;"
+         aria-hidden="true"></div>
+    <div class="heist-inner">
+      <div class="cs-placeholder" aria-label="Cover artwork coming soon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        Coming Soon
+      </div>
+      <div class="heist-body">
+        <span class="cs-label">Coming Soon</span>
+        <div class="heist-meta">
+          <span class="heist-badge" style="background: var(--border-light);">Book Five</span>
+          <span class="heist-location">Iron Gaol</span>
+        </div>
+        <h3 class="heist-title">The Gaol of Tomorrow</h3>
+        <p class="heist-stakes">The sixth door was always coming. It was just a question of surviving long enough to reach it.</p>
+        <p class="heist-blurb">
+          Five cities. Five impossible thefts. Nasyk is still standing — which means the people who arranged all of this still need her for one final job. The Iron Gaol was the beginning of the Sixfold Claim. It will be the end of it too. Everything converges here: the three witches, the claim that owns people, and the one thief who was never meant to survive this far.
+          <br><br>
+          <em>Sign up for the newsletter to be first through the door.</em>
+        </p>
+        <div class="heist-btns">
+          <a href="#newsletter" class="notify-btn">Get Notified</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</section>
+
+
+<div class="spine-node" aria-hidden="true"></div>
+<section class="parchment-section" aria-label="Prose excerpt: The Ending">
+  <div class="parchment-page">
+    <div class="burn-left" aria-hidden="true"></div>
+    <div class="burn-right" aria-hidden="true"></div>
+    <p class="parchment-label">The Drowned Masque &mdash; Book Four &mdash; After</p>
+    <h3 class="parchment-title">Still Here</h3>
+    <div class="parchment-prose">
+      <p>I poured a cup of warm spiced wine. Set it on the table beside the blade.</p>
+      <p>"Still here," I said, to the cup, to the needle, to the pale-going dark outside the window. "Still yours."</p>
+      <p>I picked up the needle. Wiped it properly. Held it in the lamp-light the way Serel had held it in the dark, in a room I'd been certain I'd die in, and watched the light move in the steel. <em>The velvet knife.</em> The name they'd breathed into me at the end of one life and the beginning of the next.</p>
+      <p>Below, the canal was beginning to catch the first of the morning, the water going from black to grey to the particular thin gold that means the city is deciding to be a city again. On the bridge, two canal birds were having an argument, unimpressed by the night's events, as they are — and suddenly made me think of Kell, somewhere far off with a stash of bright loot in a salt marsh, fledglings to call his own.</p>
+      <p>Somewhere in the city, the kept were filing home without their masques. The register was empty. The mechanism that had been running for four centuries had been opened and the water was gone and the forgetting could drain the way forgetting was supposed to drain — naturally, without weight, into the sea.</p>
+      <p>It's not a clean ending. Once again. Opening a pool doesn't fix a city — it removes the machine that was running it, and what fills the gap is the city's own problem, and cities have a long history of filling gaps badly.</p>
+      <p>The kept are still rich and the maskless are still poor and the upper canal is still the upper canal. I didn't fix that. I broke a machine.</p>
+      <p>But the pool is open. The water is gone. And four centuries of accumulated forgetting, all the dammed weight of names the city had been made to unknow, is draining the way the natural tide drains.</p>
+      <p>And on the landing above mine, a widow who has been paying for a fiction is free of the expense. As for the Merchant, he is in his wagon on a canal I won't find again. The Sea Witch and the Scroll Keeper are somewhere in the tide and reflections and the ink, and they have a thief who does what she is asked to do, and next time they will ask her to do it somewhere else, and she will go.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="spine-node" aria-hidden="true"></div>
+
+<!-- ══════════════════════ AUTHOR ══════════════════════ -->
+<section class="author" id="author" aria-label="About the author">
   <div class="container">
     <div class="author-inner">
-      <div class="author-name-block">
+      <div>
         <p class="author-title">The Author</p>
         <h2 class="author-name">Kennedy<br>MacEoghain</h2>
         <div class="author-rule"></div>
       </div>
       <div class="author-bio">
-        <!-- TODO: Replace with Kevin's actual bio -->
         <p>Kennedy MacEoghain writes street-level fantasy fiction about thieves, cities, and the ugly machinery of power. The Velvet Knife series follows one small, blue, very capable thief across six impossible jobs in six impossible cities.</p>
         <p>Also the author of the <strong>Beyond Andromeda</strong> science fiction saga — a sweeping epic of deep time, forbidden love, and a people raised across four billion years to ask the one question that matters.</p>
         <div class="author-links">
-          <a href="https://kennedymaceoghain.com" class="btn">Author Site</a>
-          <a href="https://www.goodreads.com/author/show/71342521.Kennedy_MacEoghain" class="btn">Goodreads</a>
-          <!-- TODO: Add social links -->
+          <a href="https://kennedymaceoghain.com" class="btn" rel="noopener">Author Site</a>
+          <a href="https://www.goodreads.com/author/show/71342521.Kennedy_MacEoghain" class="btn" rel="noopener">Goodreads</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- NEWSLETTER -->
-<section class="newsletter" id="newsletter">
+<!-- ══════════════════════ NEWSLETTER ══════════════════════ -->
+<section class="newsletter" id="newsletter" aria-label="Newsletter signup">
   <div class="container">
     <div class="newsletter-inner">
       <p class="section-label" style="text-align:center;">Stay in the Know</p>
       <h2 class="section-title" style="text-align:center;">New Release Alerts</h2>
       <p>No noise. Just a note when the next impossible door opens.</p>
-      <!-- TODO: Wire up to your email provider (Mailchimp, ConvertKit, etc.) -->
       <form class="newsletter-form" action="#" method="post">
-        <input type="email" name="email" placeholder="your@email.com" required />
+        <input
+          type="email" name="email"
+          placeholder="your@email.com"
+          required
+          aria-label="Email address"
+        />
         <button type="submit">Subscribe</button>
       </form>
       <p class="newsletter-note">No spam. Unsubscribe any time.</p>
@@ -597,21 +1710,83 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ══════════════════════ FOOTER ══════════════════════ -->
 <footer>
   <div class="footer-inner">
     <a href="#top" class="footer-logo">The Velvet Knife</a>
     <ul class="footer-links">
+      <li><a href="#world-map">Maps</a></li>
       <li><a href="#books">Books</a></li>
       <li><a href="#author">Author</a></li>
-      <li><a href="https://kennedymaceoghain.com">Author Site</a></li>
-      <!-- TODO: Add Instagram/TikTok links when handles confirmed -->
+      <li><a href="https://kennedymaceoghain.com" rel="noopener">Author Site</a></li>
     </ul>
     <p class="footer-copy">&copy; Kennedy MacEoghain. All rights reserved.</p>
   </div>
 </footer>
 
+<!-- ══════════════════════ SCRIPTS ══════════════════════ -->
+<script>
+  /* ── Scroll-reveal via IntersectionObserver ── */
+  (function () {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08, rootMargin: '0px 0px -50px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  })();
 
-  <script src="conversions.js" defer></script>
+  /* ── Illustrations parallax ── */
+  (function () {
+    const frames = Array.from(document.querySelectorAll('.illus-frame[data-parallax]')).map(
+      (frame) => ({
+        frame,
+        img: frame.querySelector('img'),
+        speed: parseFloat(frame.dataset.parallax) || 0.05,
+      })
+    );
+    if (!frames.length) return;
+
+    let ticking = false;
+
+    function update() {
+      frames.forEach(({ frame, img, speed }) => {
+        if (!img) return;
+        const rect = frame.getBoundingClientRect();
+        // distance from centre of viewport to centre of element
+        const delta = window.innerHeight / 2 - (rect.top + rect.height / 2);
+        img.style.transform = 'translateY(' + (delta * speed).toFixed(2) + 'px)';
+      });
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    update();
+  })();
+
+  /* ── Pin keyboard activation (Enter/Space) ── */
+  document.querySelectorAll('.city-pin').forEach((pin) => {
+    pin.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        pin.classList.toggle('active');
+      }
+    });
+  });
+</script>
+</div><!-- /.spine-wrap -->
+
 </body>
 </html>
