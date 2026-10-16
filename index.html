@@ -206,8 +206,25 @@
       max-height: 520px;
     }
     .char-img { overflow: hidden; height: 520px; }
-    .char-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s ease; }
-    .char-img:hover img { transform: scale(1.04); }
+    .char-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top;
+      will-change: transform;
+      animation: char-breathe-a 28s ease-in-out infinite alternate;
+    }
+    .char-strip-inner .char-img:last-child img { animation-name: char-breathe-b; }
+    .char-img:hover img { animation-play-state: paused; }
+    @keyframes char-breathe-a {
+      from { transform: scale(1) translate3d(0, 0, 0); }
+      to   { transform: scale(1.07) translate3d(-1.4%, -1.6%, 0); }
+    }
+    @keyframes char-breathe-b {
+      from { transform: scale(1.07) translate3d(1.2%, 1.4%, 0); }
+      to   { transform: scale(1) translate3d(0, 0, 0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .char-img img { animation: none; }
+    }
     .char-quote {
       padding: 3rem 2.5rem;
       text-align: center;
@@ -1231,7 +1248,7 @@
 <section class="char-strip" id="nasyk">
   <div class="char-strip-inner">
     <div class="char-img reveal">
-      <img src="art/nasyk-alley.jpg" alt="Nasyk moving across rooftops at night" />
+      <img src="art/silver-vow-art.jpg" alt="Nasyk on a Silver Vow rooftop above the city at night — raw art from Book Two, The Silver Vow" />
     </div>
     <div class="char-quote reveal">
       <blockquote>
@@ -1240,7 +1257,7 @@
       <cite>— Nasyk, The Silver Vow</cite>
     </div>
     <div class="char-img reveal">
-      <img src="art/silver-vow-art.jpg" alt="Nasyk on a Silver Vow rooftop above the city at night" />
+      <img src="art/drowned-masque-art.jpg" alt="Nasyk among the carnival masks of flooded Zimira — raw art from Book Four, The Drowned Masque" />
     </div>
   </div>
 </section>
