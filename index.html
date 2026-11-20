@@ -1147,6 +1147,14 @@
     /* ── STANDALONE MAP INSERTS ── */
     .map-insert { padding: 3rem 2rem; position: relative; z-index: 1; }
     .map-insert-inner { max-width: 920px; margin: 0 auto; }
+    .map-pair {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.75rem;
+      align-items: start;
+    }
+    .map-pair-item img { width: 100%; height: auto; display: block; }
+    .map-insert-inner.wide { max-width: 1120px; }
     .map-insert-label {
       text-align: center; font-family: var(--display);
       font-size: 0.76rem; letter-spacing: 0.28em; text-transform: uppercase;
@@ -1304,14 +1312,14 @@
     <!-- Iron Gaol -->
 <div class="pin-tooltip" role="tooltip">
         <span class="pin-tooltip-name">Iron Gaol</span>
-        <span class="pin-tooltip-book">Book 1 — The Origin</span>
+        <span class="pin-tooltip-book">Book 5 — The Gaol of Tomorrow</span>
       </div>
     </div>
 
     <!-- High Counting-House -->
 <div class="pin-tooltip" role="tooltip">
         <span class="pin-tooltip-name">High Counting-House</span>
-        <span class="pin-tooltip-book">Book 5 — The Gaol of Tomorrow</span>
+        <span class="pin-tooltip-book">Book 6 — The Last Claim</span>
       </div>
     </div>
 
@@ -1354,8 +1362,8 @@
   <!-- Mobile legend (shown instead of pins) -->
   <div class="map-legend" aria-label="City legend">
     <ul class="map-legend-list">
-      <li>Iron Gaol <span class="book-tag">— Book 1</span></li>
-      <li>High Counting-House <span class="book-tag">— Book 5</span></li>
+      <li>Iron Gaol <span class="book-tag">— Book 5</span></li>
+      <li>High Counting-House <span class="book-tag">— Book 6</span></li>
       <li>Aurenmask</li>
       <li>The Nethermarch</li>
       <li>Vael Corran <span class="book-tag">— Book 2</span></li>
@@ -1496,6 +1504,51 @@
     <div class="divider divider-center"></div>
     <p class="tagline">Every city. Every door. Every job that couldn't be done.</p>
   </div>
+
+  <!-- ── Book 1: The Velvet Knife ── -->
+  <article class="heist-card alt reveal" id="book1" aria-label="Book 1: The Velvet Knife">
+    <div class="heist-bg"
+         style="background-image: url('maps/spur.jpg'); background-position: 60% 45%;"
+         aria-hidden="true"></div>
+    <div class="heist-inner">
+      <div class="heist-cover-wrap">
+        <img
+          src="covers/book1.jpg"
+          alt="The Velvet Knife — Book One cover showing two mirrored duelists with crossed rapiers over a black cat"
+          loading="lazy"
+        />
+      </div>
+      <div class="heist-body">
+        <div class="heist-meta">
+          <span class="heist-badge">Book One</span>
+          <span class="heist-location">The Spur</span>
+        </div>
+        <h3 class="heist-title">The Velvet Knife</h3>
+        <p class="heist-stakes">Steal: the Needle from her own sister&rsquo;s wall &mdash; before anyone asks what she took.</p>
+        <p class="heist-blurb">
+          Nasyk&rsquo;s first job is to find out how the garrison moves its silver. The harder job will be stealing from her own sister. The Nethershade send Nasyk where other people can&rsquo;t go &mdash; up walls in the dark, counting steps, pulling shadows close enough to blur her outline for a breath. When the people who rely on her refuse her a route of her own, she decides to walk away and take the Needle with her.
+          <br><br>
+          <em>Every claim begins at home.</em>
+        </p>
+        <div class="heist-btns">
+          <span class="hbtn">Coming Soon &mdash; Amazon &amp; B&amp;N</span>
+          <a href="#newsletter" class="hbtn hbtn-amz">Get Launch Notice</a>
+          <a href="https://kennedymaceoghain.com" class="hbtn" rel="noopener">Author Site</a>
+        </div>
+      </div>
+    </div>
+  </article>
+<div class="spine-node" aria-hidden="true"></div>
+<section class="map-insert" aria-label="The Spur &amp; The Culvert">
+  <div class="map-insert-inner" style="max-width: 680px;">
+    <div class="map-burned">
+      <img src="maps/spur.jpg" alt="The Spur — map from The Velvet Knife (Book One), showing Sorcha's Wayhouse, Marthe's Wayhouse, Spur Fork, and The Culvert" loading="lazy" />
+    </div>
+    <p class="map-insert-label">The Spur &amp; The Culvert</p>
+    <p class="map-insert-sub">The payroll road, the wayhouses, and the garrison walls where the first job begins.</p>
+  </div>
+</section>
+<div class="spine-node" aria-hidden="true"></div>
 
   <!-- ── Book 2: The Silver Vow ── -->
   <article class="heist-card reveal" id="book2" aria-label="Book 2: The Silver Vow">
@@ -1674,6 +1727,62 @@
     <p class="map-insert-sub">Three days north of the last honest road. The fortress that files people out of the world.</p>
   </div>
 </section>
+<div class="spine-node" aria-hidden="true"></div>
+<article class="heist-card reveal reveal-d3" id="book6" aria-label="Book 6: The Last Claim">
+    <div class="heist-bg"
+         style="background-image: url('maps/counting-house-city.jpg'); background-position: 50% 45%;"
+         aria-hidden="true"></div>
+    <div class="heist-inner">
+      <div class="heist-cover-wrap">
+        <img
+          src="covers/book6.jpg"
+          alt="The Last Claim — Book Six cover showing Nasyk in violet smoke with dagger and cat-pommel rapier drawn"
+          loading="lazy"
+        />
+      </div>
+      <div class="heist-body">
+        <div class="heist-meta">
+          <span class="heist-badge">Book Six</span>
+          <span class="heist-location">High Counting-House</span>
+        </div>
+        <h3 class="heist-title">The Last Claim</h3>
+        <p class="heist-stakes">Steal: the right to hold the Sixfold Claim &mdash; before one hand owns the world.</p>
+        <p class="heist-blurb">
+          Her sister is alive, and the man holding her has been arranging the road to her door. The trail leads to the High Counting-House: a city of clerks, courts, and sealed records where ownership is made lawful and an enemy is gathering the Sixfold Claim into a single account. To reach Serel, Nasyk must bring a divided crew through a House that counts everyone who enters &mdash; and turn ancient law against the hand that wrote it.
+          <br><br>
+          <em>Every claim comes due.</em>
+        </p>
+        <div class="heist-btns">
+          <span class="hbtn">Available Soon &mdash; Amazon</span>
+          <a href="#newsletter" class="hbtn hbtn-amz">Get Launch Notice</a>
+          <a href="https://kennedymaceoghain.com" class="hbtn" rel="noopener">Author Site</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+<div class="spine-node" aria-hidden="true"></div>
+<section class="map-insert" aria-label="The High Counting-House — City and Cutaway Maps">
+  <div class="map-insert-inner wide">
+    <div class="map-pair">
+      <div class="map-pair-item">
+        <div class="map-burned">
+          <img src="maps/counting-house-city.jpg" alt="The High Counting-House — walled city map from The Last Claim showing Charter Ward, Ledger Ward, Clerks' Quarter, and Quayside" loading="lazy" />
+        </div>
+        <p class="map-insert-label">The High Counting-House &mdash; City</p>
+        <p class="map-insert-sub">Charter Ward, Ledger Ward, Clerks&rsquo; Quarter, and the river running through the wall.</p>
+      </div>
+      <div class="map-pair-item">
+        <div class="map-burned">
+          <img src="maps/counting-house-cutaway.jpg" alt="The High Counting-House — architectural cutaway map from The Last Claim" loading="lazy" />
+        </div>
+        <p class="map-insert-label">The High Counting-House &mdash; Interior Cutaway</p>
+        <p class="map-insert-sub">Nine numbered levels from the river gate and vaults up to the upper archive.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 </section>
 
