@@ -396,6 +396,59 @@
       color: var(--cream);
       line-height: 1.55;
     }
+
+    /* ── CHARACTERS & FORCES ── */
+    .cast-section {
+      background: var(--dark);
+      border-bottom: 1px solid var(--border);
+    }
+    .cast-subhead {
+      font-family: var(--display);
+      font-size: 0.78rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 2.5rem 0 1.2rem;
+    }
+    .cast-subhead:first-of-type { margin-top: 0.5rem; }
+    .cast-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.4rem;
+    }
+    .cast-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--crimson);
+      padding: 1.5rem 1.6rem;
+      transition: border-color 0.2s;
+    }
+    .cast-card:hover { border-color: var(--gold); }
+    .cast-card.witch { border-top-color: var(--gold); }
+    .cast-role {
+      font-family: var(--display);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 0.45rem;
+    }
+    .cast-card.witch .cast-role { color: var(--gold); }
+    .cast-name {
+      font-family: var(--display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 0.65rem;
+    }
+    .cast-desc {
+      font-size: 1rem;
+      line-height: 1.65;
+      color: #ffffff;
+    }
+
     .series-intro-quote cite {
       display: block; margin-top: 1rem;
       font-size: 0.89rem; letter-spacing: 0.15em;
@@ -1198,6 +1251,7 @@
 <nav aria-label="Site navigation">
   <a href="#top" class="nav-logo">The Velvet Knife</a>
   <ul class="nav-links">
+    <li><a href="#characters">Characters</a></li>
     <li><a href="#world-map">Maps</a></li>
     <li><a href="#read">Read</a></li>
     <li><a href="#books">Books</a></li>
@@ -1211,14 +1265,14 @@
   <div style="position:relative; z-index:1; width:100%;">
     <p class="hero-label">
       <span class="hero-rule" aria-hidden="true"></span>
-      A Complete Six-Book Fantasy Heist Saga
+      A Complete Six-Book Dark Fantasy Heist Saga
       <span class="hero-rule" aria-hidden="true"></span>
     </p>
     <h1>The Velvet<br>Knife</h1>
     <p class="hero-subtitle">Kennedy MacEoghain</p>
     <p class="hero-tagline">
-      <strong>One stolen blade. Six impossible jobs.</strong><br>
-      A morally gray thief, a divided crew, and the magical-legal machine that lets cities own people &mdash; <em>until she comes for the hand that holds the ledger</em>.
+      <strong>One stolen Nethershade blade. Six walled cities.</strong><br>
+      A thief built for high walls and narrow gaps, a crew she barely trusts, and the Sixfold Claim &mdash; <em>the legal-magical ledger that makes human beings ownable</em>.
     </p>
     <div class="hero-cta-group">
       <a href="#books" class="btn btn-fill">Start the Series</a>
@@ -1237,10 +1291,10 @@
         <p class="section-label">The World</p>
         <h2 class="section-title">Nothing's Impossible.<br>It Just Means Someone<br>Rich Has Made the Door Ugly.</h2>
         <div class="divider"></div>
-        <p><strong>The Velvet Knife</strong> is a complete six-book dark fantasy heist saga about a thief who starts by stealing a blade from her own sister &mdash; and ends up tearing apart the machinery that lets cities own people.</p>
-        <p>Nasyk is four foot eleven and a half, blue-skinned, and built for walls and narrow gaps. She isn&rsquo;t noble and she isn&rsquo;t a chosen one. She works with crews she cannot quite afford to trust, in cities that would cheerfully see her dead, using small shadow-magic that costs her sleep and appetite every time she pulls it.</p>
-        <p>Every book is a <strong>new city and a harder door</strong>: a garrison payroll on the Spur, inherited debt in Vael Corran, erased dead in the Namehouse, stolen faces in Zimira, erased futures in the Iron Gaol &mdash; and beneath them all, the <strong>Sixfold Claim</strong>, an ancient ledger of ownership that one hand is quietly gathering into a single account.</p>
-        <p>From the first theft at home to the final reckoning at the High Counting-House, Nasyk isn&rsquo;t stealing for gold. She&rsquo;s breaking the lock on what makes a person ownable.</p>
+        <p>Out along the spur roads and quiet wayhouses live the <strong>Nethershade</strong> &mdash; blue-skinned, red-eyed, long-lived, and marked as bad omens by the cities below. They carry small, tiring knacks &mdash; a coal of cold light, a shadow pulled close enough to blur a shape for a breath &mdash; and they keep strict account of every debt paid or owed.</p>
+        <p>Down in the walled cities runs a different kind of magic, written in ink, wax, and stone: the <strong>Sixfold Claim</strong>. Six ancient cities, six houses, and six instruments that make people legally ownable &mdash; binding a child to a grandfather&rsquo;s debt in Vael Corran, scrubbing the murdered from the death-ledgers in the Namehouse, stripping identity in Zimira, filing citizens out of tomorrow in the Iron Gaol.</p>
+        <p>Between them walks <strong>Nasyk</strong> &mdash; four foot eleven and a half, fast on a roof, carrying a blade she stole from her own sister&rsquo;s wall and a crew of specialists who don&rsquo;t much like being led. Every job cracks open one more piece of the machine &mdash; until she discovers someone patient has been arranging the doors in front of her, waiting to gather all six Claims into a single hand at the High Counting-House.</p>
+        <p><strong>Street-level heist fantasy.</strong> No chosen one. No clean rescues. Just locks, ledgers, old blood, and a thief stubborn enough to break the system that owns the world.</p>
       </div>
       <div class="series-intro-quote" aria-label="Series quote">
         <blockquote>
@@ -1271,6 +1325,77 @@
 </section>
 
 <!-- ══════════════════════ WORLD MAP ══════════════════════ -->
+
+
+
+<!-- ══════════════════════ CHARACTERS & WITCHES ══════════════════════ -->
+<section class="cast-section" id="characters" aria-label="Characters and powers">
+  <div class="container">
+    <p class="section-label">Dramatis Personae</p>
+    <h2 class="section-title">The Crew, the Sister, and the Three</h2>
+    <div class="divider"></div>
+
+    <p class="cast-subhead">The Crew &amp; Blood</p>
+    <div class="cast-grid">
+      <div class="cast-card reveal">
+        <p class="cast-role">Thief &middot; Nethershade</p>
+        <h3 class="cast-name">Nasyk</h3>
+        <p class="cast-desc">Four foot eleven and a half, black-haired, wrong-eyed, and built for walls nobody else can climb. She steals to eat, climbs out of graves when she has to, and spends eighty years trying to stay clear of the one blade she swore never to draw.</p>
+      </div>
+
+      <div class="cast-card reveal reveal-d1">
+        <p class="cast-role">Elder Sister &middot; Nethershade</p>
+        <h3 class="cast-name">Serel</h3>
+        <p class="cast-desc">Two hundred and fifty years older, and twice as steady with a rapier. Serel kept the Needle locked on her wall to spare her younger sister what it carried &mdash; until the night Nasyk stole it anyway and walked down the road alone.</p>
+      </div>
+
+      <div class="cast-card reveal reveal-d2">
+        <p class="cast-role">Scout &amp; Sharp Eye</p>
+        <h3 class="cast-name">Sable</h3>
+        <p class="cast-desc">Dry, unsentimental, and allergic to bad plans. Sable watches flanks, spots the trap in a client&rsquo;s smile, and stays with Nasyk long after any sensible thief would have collected her cut and left.</p>
+      </div>
+
+      <div class="cast-card reveal">
+        <p class="cast-role">Heavy &middot; Point</p>
+        <h3 class="cast-name">Brann</h3>
+        <p class="cast-desc">Big enough to hold a narrow passage against a watch squad and honest enough to make the rest of the crew uncomfortable. When a job goes wrong in the dark, Brann is the wall between Nasyk and the door.</p>
+      </div>
+
+      <div class="cast-card reveal reveal-d1">
+        <p class="cast-role">Fixer &middot; Forger of Roads</p>
+        <h3 class="cast-name">Caldus</h3>
+        <p class="cast-desc">Forty years of quiet debts carried in a grey coat. Caldus moves between counting-rooms and prison cellars, reading clerks the way Nasyk reads stone &mdash; and knowing far more about the Claim than he lets on at first.</p>
+      </div>
+
+      <div class="cast-card reveal reveal-d2">
+        <p class="cast-role">Route-Readers &middot; Nethershade</p>
+        <h3 class="cast-name">Nim &amp; Ri</h3>
+        <p class="cast-desc">Nimriel and Nimrith: mirror-twins sent to pay a Nethershade debt in the only coin the Nethershade ever spends &mdash; people. Half a mile apart in the dark, each knows the exact ridge the other is about to crest.</p>
+      </div>
+    </div>
+
+    <p class="cast-subhead">The Trio &mdash; The Three Witches</p>
+    <div class="cast-grid">
+      <div class="cast-card witch reveal">
+        <p class="cast-role">The Trio &middot; Water &amp; Salt</p>
+        <h3 class="cast-name">The Sea Witch</h3>
+        <p class="cast-desc">Shrouded, salt-crusted, with drowned shell eyes that bring the smell of a coast into dry hills weeks from any sea. She steps out of still water when the odds turn ugly &mdash; and never pretends mercy is free.</p>
+      </div>
+
+      <div class="cast-card witch reveal reveal-d1">
+        <p class="cast-role">The Trio &middot; Frost &amp; Stone</p>
+        <h3 class="cast-name">The Keeper</h3>
+        <p class="cast-desc">Never speaks with a tongue when frost on wet rock will do. Past, present, and future run across stone in her thin, shifting hand &mdash; always accurate, never complete, and gone the moment the ice melts.</p>
+      </div>
+
+      <div class="cast-card witch reveal reveal-d2">
+        <p class="cast-role">The Trio &middot; Glass &amp; Ledger</p>
+        <h3 class="cast-name">The Merchant</h3>
+        <p class="cast-desc">Steps out of the space behind a reflection in dark water or window-glass, smiling like a broker who already owns the room. Where the other two deal in tides and time, the Merchant deals in prices.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <section class="parchment-section" aria-label="Prose excerpt: The Lesson">
